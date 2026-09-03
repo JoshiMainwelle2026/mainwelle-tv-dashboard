@@ -42,7 +42,7 @@ MONTHS = {
 
 
 def parse_item(text: str, href: str):
-    match = DATE_PATTERN.match(text.strip())
+    match = DATE_PATTERN.search(text.strip())
     if not match:
         return None
     day, month_name, year, hour, minute, headline = match.groups()
