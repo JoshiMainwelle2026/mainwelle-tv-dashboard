@@ -26,6 +26,7 @@ SOURCE_URL = "https://www.mainwelle.de/kategorie/nachrichten/regional-nachrichte
 OUTPUT_PATH = Path(__file__).resolve().parent.parent / "docs" / "news.json"
 MAX_ITEMS = 15
 MAX_ATTEMPTS = 3
+TEASER_MAX_LEN = 220
 
 # Format wie auf der Seite beobachtet: "16 . Juli 2026 09:17 Überschrift..."
 DATE_PATTERN = re.compile(
@@ -97,8 +98,60 @@ def collect_items(page):
     return items
 
 
+def make_teaser(text: str) -> str:
+    """Kürzt einen Artikeltext auf einen kurzen Teaser, ohne ein Wort
+    mittendrin abzuschneiden."""
+    text = re.sub(r"\s+", " ", text).strip()
+    if len(text) <= TEASER_MAX_LEN:
+        return text
+    cut = text[:TEASER_MAX_LEN]
+    last_space = cut.rfind(" ")
+    if last_space > 0:
+        cut = cut[:last_space]
+    return cut.rstrip(" ,.-–") + " …"
+
+
+def fetch_teaser(page, url: str) -> str:
+    """Öffnet die Artikelseite und holt den ersten nicht-leeren Absatz des
+    Fließtexts als Teaser. Gibt bei Problemen einfach einen leeren String
+    zurück, statt den ganzen Lauf scheitern zu lassen."""
+    try:
+        page.goto(url, wait_until="domcontentloaded", timeout=15000)
+        page.wait_for_selector(".idvl-editor p", timeout=8000)
+        paragraphs = page.eval_on_selector_all(
+            ".idvl-editor p",
+            "els => els.map(e => e.innerText)",
+        )
+        for paragraph in paragraphs:
+            paragraph = (paragraph or "").strip()
+            if paragraph:
+                return make_teaser(paragraph)
+    except Exception:
+        pass
+    return ""
+
+
+def load_existing_teasers():
+    """Liest die zuletzt veröffentlichte news.json, damit wir für bereits
+    bekannte Meldungen nicht bei jedem Lauf erneut die Artikelseite laden
+    müssen (spart Zeit und Last auf mainwelle.de)."""
+    if not OUTPUT_PATH.exists():
+        return {}
+    try:
+        data = json.loads(OUTPUT_PATH.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError):
+        return {}
+    return {
+        item["url"]: item["teaser"]
+        for item in data.get("items", [])
+        if item.get("url") and item.get("teaser")
+    }
+
+
 def scrape(debug: bool = False):
-    items = []
+    existing_teasers = load_existing_teasers()
+    raw_items = []
+
     with sync_playwright() as p:
         browser = p.chromium.launch()
         page = browser.new_page(locale="de-DE")
@@ -133,7 +186,7 @@ def scrape(debug: bool = False):
             attempt_items = collect_items(page)
 
             if attempt_items:
-                items = attempt_items
+                raw_items = attempt_items
                 break
 
             print(
@@ -142,10 +195,18 @@ def scrape(debug: bool = False):
                 file=sys.stderr,
             )
 
+        raw_items.sort(key=lambda x: x["published"], reverse=True)
+        items = raw_items[:MAX_ITEMS]
+
+        # Teaser ergänzen: aus dem Cache übernehmen, wenn wir die Meldung
+        # schon kennen, sonst kurz die Artikelseite besuchen.
+        for item in items:
+            cached = existing_teasers.get(item["url"])
+            item["teaser"] = cached if cached else fetch_teaser(page, item["url"])
+
         browser.close()
 
-    items.sort(key=lambda x: x["published"], reverse=True)
-    return items[:MAX_ITEMS]
+    return items
 
 
 def main():
