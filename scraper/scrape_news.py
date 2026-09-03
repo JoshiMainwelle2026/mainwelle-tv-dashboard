@@ -157,7 +157,21 @@ def scrape(debug: bool = False):
         page = browser.new_page(locale="de-DE")
 
         for attempt in range(1, MAX_ATTEMPTS + 1):
-            page.goto(SOURCE_URL, wait_until="networkidle", timeout=30000)
+            # domcontentloaded statt networkidle: die Seite lädt dauerhaft
+            # Tracking-/Analytics-Requests nach, sodass "networkidle"
+            # gelegentlich nie erreicht wird und in einen Timeout läuft.
+            # Der goto-Aufruf steht bewusst in einem try/except, damit ein
+            # einzelner fehlgeschlagener Seitenaufruf nicht den kompletten
+            # Lauf abbrechen lässt, sondern einfach neu versucht wird.
+            try:
+                page.goto(SOURCE_URL, wait_until="domcontentloaded", timeout=30000)
+            except Exception as exc:
+                print(
+                    f"Versuch {attempt}/{MAX_ATTEMPTS}: Laden der Seite "
+                    f"fehlgeschlagen ({exc!r}), versuche es erneut...",
+                    file=sys.stderr,
+                )
+                continue
 
             # Statt blind eine feste Zeit zu warten: aktiv darauf warten,
             # dass mindestens ein Link mit dem erwarteten Datumsmuster im
