@@ -1,0 +1,761 @@
+<!DOCTYPE html><html lang="de"><head><style id="swiper-element-styles">@font-face{font-family:swiper-icons;src:url('data:application/font-woff;charset=utf-8;base64, d09GRgABAAAAAAZgABAAAAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABGRlRNAAAGRAAAABoAAAAci6qHkUdERUYAAAWgAAAAIwAAACQAYABXR1BPUwAABhQAAAAuAAAANuAY7+xHU1VCAAAFxAAAAFAAAABm2fPczU9TLzIAAAHcAAAASgAAAGBP9V5RY21hcAAAAkQAAACIAAABYt6F0cBjdnQgAAACzAAAAAQAAAAEABEBRGdhc3AAAAWYAAAACAAAAAj//wADZ2x5ZgAAAywAAADMAAAD2MHtryVoZWFkAAABbAAAADAAAAA2E2+eoWhoZWEAAAGcAAAAHwAAACQC9gDzaG10eAAAAigAAAAZAAAArgJkABFsb2NhAAAC0AAAAFoAAABaFQAUGG1heHAAAAG8AAAAHwAAACAAcABAbmFtZQAAA/gAAAE5AAACXvFdBwlwb3N0AAAFNAAAAGIAAACE5s74hXjaY2BkYGAAYpf5Hu/j+W2+MnAzMYDAzaX6QjD6/4//Bxj5GA8AuRwMYGkAPywL13jaY2BkYGA88P8Agx4j+/8fQDYfA1AEBWgDAIB2BOoAeNpjYGRgYNBh4GdgYgABEMnIABJzYNADCQAACWgAsQB42mNgYfzCOIGBlYGB0YcxjYGBwR1Kf2WQZGhhYGBiYGVmgAFGBiQQkOaawtDAoMBQxXjg/wEGPcYDDA4wNUA2CCgwsAAAO4EL6gAAeNpj2M0gyAACqxgGNWBkZ2D4/wMA+xkDdgAAAHjaY2BgYGaAYBkGRgYQiAHyGMF8FgYHIM3DwMHABGQrMOgyWDLEM1T9/w8UBfEMgLzE////P/5//f/V/xv+r4eaAAeMbAxwIUYmIMHEgKYAYjUcsDAwsLKxc3BycfPw8jEQA/gZBASFhEVExcQlJKWkZWTl5BUUlZRVVNXUNTQZBgMAAMR+E+gAEQFEAAAAKgAqACoANAA+AEgAUgBcAGYAcAB6AIQAjgCYAKIArAC2AMAAygDUAN4A6ADyAPwBBgEQARoBJAEuATgBQgFMAVYBYAFqAXQBfgGIAZIBnAGmAbIBzgHsAAB42u2NMQ6CUAyGW568x9AneYYgm4MJbhKFaExIOAVX8ApewSt4Bic4AfeAid3VOBixDxfPYEza5O+Xfi04YADggiUIULCuEJK8VhO4bSvpdnktHI5QCYtdi2sl8ZnXaHlqUrNKzdKcT8cjlq+rwZSvIVczNiezsfnP/uznmfPFBNODM2K7MTQ45YEAZqGP81AmGGcF3iPqOop0r1SPTaTbVkfUe4HXj97wYE+yNwWYxwWu4v1ugWHgo3S1XdZEVqWM7ET0cfnLGxWfkgR42o2PvWrDMBSFj/IHLaF0zKjRgdiVMwScNRAoWUoH78Y2icB/yIY09An6AH2Bdu/UB+yxopYshQiEvnvu0dURgDt8QeC8PDw7Fpji3fEA4z/PEJ6YOB5hKh4dj3EvXhxPqH/SKUY3rJ7srZ4FZnh1PMAtPhwP6fl2PMJMPDgeQ4rY8YT6Gzao0eAEA409DuggmTnFnOcSCiEiLMgxCiTI6Cq5DZUd3Qmp10vO0LaLTd2cjN4fOumlc7lUYbSQcZFkutRG7g6JKZKy0RmdLY680CDnEJ+UMkpFFe1RN7nxdVpXrC4aTtnaurOnYercZg2YVmLN/d/gczfEimrE/fs/bOuq29Zmn8tloORaXgZgGa78yO9/cnXm2BpaGvq25Dv9S4E9+5SIc9PqupJKhYFSSl47+Qcr1mYNAAAAeNptw0cKwkAAAMDZJA8Q7OUJvkLsPfZ6zFVERPy8qHh2YER+3i/BP83vIBLLySsoKimrqKqpa2hp6+jq6RsYGhmbmJqZSy0sraxtbO3sHRydnEMU4uR6yx7JJXveP7WrDycAAAAAAAH//wACeNpjYGRgYOABYhkgZgJCZgZNBkYGLQZtIJsFLMYAAAw3ALgAeNolizEKgDAQBCchRbC2sFER0YD6qVQiBCv/H9ezGI6Z5XBAw8CBK/m5iQQVauVbXLnOrMZv2oLdKFa8Pjuru2hJzGabmOSLzNMzvutpB3N42mNgZGBg4GKQYzBhYMxJLMlj4GBgAYow/P/PAJJhLM6sSoWKfWCAAwDAjgbRAAB42mNgYGBkAIIbCZo5IPrmUn0hGA0AO8EFTQAA');font-weight:400;font-style:normal}
+</style><style class="vjs-styles-defaults">
+      .video-js {
+        width: 300px;
+        height: 150px;
+      }
+
+      .vjs-fluid:not(.vjs-audio-only-mode) {
+        padding-top: 56.25%
+      }
+    </style>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,viewport-fit=cover">
+
+	<title>Regional-Nachrichten | Radio Mainwelle</title>
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="format-detection" content="telephone=no">
+
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+
+	<link rel="amphtml" href="https://www.mainwelle.de/amp/bundesweiter-warntag-alarm-auch-in-bayreuth-2410413/">
+<link rel="canonical" href="https://www.mainwelle.de/kategorie/nachrichten/regional-nachrichten/">
+<meta name="robots" content="max-image-preview:large">
+<meta name="description" content="Regional-Nachrichten | Radio Mainwelle">
+<meta name="cmms-cm-r-by" content="user">
+<meta name="cmms-cm-g-at" content="2026-09-03 16:29:46">
+<meta name="cmms-cm-v-un" content="2026-09-03 17:29:46">
+<link rel="dns-prefetch" href="//www.mainwelle.de">
+<link rel="dns-prefetch" href="//assets.welocal.world">
+<link rel="alternate" type="application/rss+xml" title="Radio Mainwelle » Feed" href="https://www.mainwelle.de/feed/">
+<link rel="alternate" type="application/rss+xml" title="Radio Mainwelle » Kategorie-Feed für Regional-Nachrichten" href="https://www.mainwelle.de/kategorie/nachrichten/regional-nachrichten/feed/">
+<script type="text/javascript" async="" defer="" src="//www.mainwelle.de/matomo.php"></script><script type="text/javascript" src="https://assets.welocal.world/js/iabtcf/stub-1.5.6.js"></script>
+<link rel="usercentrics-preconnect" href="https://consent-api.service.consent.usercentrics.eu">
+<link rel="usercentrics-preconnect" href="https://app.usercentrics.eu">
+<link rel="usercentrics-preload" href="https://app.usercentrics.eu/browser-ui/latest/loader.js" as="script">
+<script type="text/plain" id="usercentrics-cmp" data-settings-id="AYYmc_D8j" src="https://app.usercentrics.eu/browser-ui/latest/loader.js" data-tcf-enabled=""></script>
+<link rel="stylesheet" id="core-css" href="https://www.mainwelle.de/wp-content/plugins/cmms/assets/css/frontend/core.css?ver=4.144" media="all">
+<link rel="stylesheet" id="lightbox-css" href="https://www.mainwelle.de/wp-content/plugins/cmms/assets/css/lightbox.css?ver=0.8.9" media="all">
+<link rel="stylesheet" id="cmms-plugin-lost_found-css" href="https://www.mainwelle.de/wp-content/plugins/cmms-plugin-lost_found/assets/css/lostfound.css?ver=7.1" media="all">
+<link rel="stylesheet" id="cmms-theme-soylent-fonts-css" href="https://assets.welocal.world/fonts/Jost:300,300i,400,400i,500,500i,700" media="all">
+<link rel="stylesheet" id="cmms-theme-soylent-weather_icons-css" href="https://www.mainwelle.de/wp-content/themes/cmms-theme-soylent/assets/dist/css/icons-weather.css?ver=1.75" media="all">
+<link rel="stylesheet" id="cmms-theme-soylent-sso_module-css" href="https://www.mainwelle.de/wp-content/themes/cmms-theme-soylent/assets/dist/css/module-sso.css?ver=1.75" media="all">
+<link rel="stylesheet" id="cmms-theme-soylent-app-css" href="https://www.mainwelle.de/wp-content/themes/cmms-theme-fhb/assets/dist/1.75/app.css" media="all">
+<link rel="stylesheet" id="videojs-css" href="https://www.mainwelle.de/wp-content/plugins/cmms/lib/../assets/videojs/7.20.3/video-js.css?ver=7.20.3" media="">
+<link rel="stylesheet" id="videojs-skin-css" href="https://www.mainwelle.de/wp-content/plugins/cmms/lib/../assets/dist/4.144/css/videojs.skin.css?ver=7.20.3-4.144" media="">
+<link rel="stylesheet" id="idvl-socs-css-css" href="https://www.mainwelle.de/wp-content/plugins/idvl-social_share/assets/css/social_share.css?ver=1.11" media="">
+<link rel="stylesheet" id="cmms-module-captcha-altcha-css" href="https://www.mainwelle.de/wp-content/modules/cmms-module-captcha/assets/dist/0.3/css/altcha.css?ver=7.1" media="all">
+<script type="text/javascript">
+window.cmms_base='https://www.mainwelle.de';
+window.cmms_storage_base='https://www.mainwelle.de/storage/';
+window.cmms_thumbs_base='https://www.mainwelle.de/cmms-thumb/';
+</script>
+<script type="text/javascript">window.cmms_thumbs_base="https://www.mainwelle.de/storage/thumbs/";</script>
+<script id="cmms-l10n-utils-js-before">
+window.cmmsLocale = "de_DE";
+//# sourceURL=cmms-l10n-utils-js-before
+</script>
+<script id="cmms-l10n-utils-js" src="https://www.mainwelle.de/wp-content/plugins/cmms/assets/dist/4.144/js/cmms.l10n.js?ver=4.144"></script>
+<script id="cmms-filters-js" src="https://www.mainwelle.de/wp-content/plugins/cmms/assets/js/cmms.filters.min.js?ver=4.144"></script>
+<script id="vue-runtime-js" src="https://assets.welocal.world/js/vue-runtime/vue.runtime.3.4.31.js"></script>
+<style>.videojs-player-container{--cmms-videojs-accent:#2aabe2;}</style><link rel="shortcut icon" href="https://www.mainwelle.de/storage/thumbs/512x512/r:1692983585/40872.png">
+<link rel="icon" href="https://www.mainwelle.de/storage/thumbs/32x32/r:1692983585/40872.png" sizes="32x32">
+<link rel="icon" href="https://www.mainwelle.de/storage/thumbs/48x48/r:1692983585/40872.png" sizes="48x48">
+<link rel="icon" href="https://www.mainwelle.de/storage/thumbs/192x192/r:1692983585/40872.png" sizes="192x192">
+<link rel="apple-touch-icon-precomposed" href="https://www.mainwelle.de/storage/thumbs/180x180/r:1692983585/40872.png">
+<meta name="msapplication-TileImage" content="https://www.mainwelle.de/storage/thumbs/270x270/r:1692983585/40872.png">
+<meta name="theme-color" content="#000000"><style>:root {
+--key-color-1: #2aabe2;
+--key-color-1-h: 197.93;
+--key-color-1-s: 76.03%;
+--key-color-1-l: 52.55%;
+--key-color-1-contrast: #ffffff;
+--key-color-1-contrast-h: 0;
+--key-color-1-contrast-s: 0%;
+--key-color-1-contrast-l: 100%;
+--key-color-2: #0c2d6a;
+--key-color-2-h: 218.94;
+--key-color-2-s: 79.66%;
+--key-color-2-l: 23.14%;
+--key-color-2-contrast: #ffffff;
+--key-color-2-contrast-h: 0;
+--key-color-2-contrast-s: 0%;
+--key-color-2-contrast-l: 100%;
+}</style>
+<style id="altcha-css">:root {
+  --altcha-border-color: var(--altcha-color-neutral);
+  --altcha-border-width: 1px;
+  --altcha-border-radius: 6px;
+  --altcha-color-base: light-dark(oklch(100% 0.00011 271.152), oklch(20.904% 0.00002 271.152));
+  --altcha-color-base-content: light-dark(
+  	oklch(20.904% 0.00002 271.152),
+  	oklch(100% 0.00011 271.152)
+  );
+  --altcha-color-error: oklch(51.284% 0.20527 28.678);
+  --altcha-color-error-content: oklch(100% 0.00011 271.152);
+  --altcha-color-neutral: light-dark(oklch(83.591% 0.0001 271.152), oklch(46.04% 0.00005 271.152));
+  --altcha-color-neutral-content: light-dark(
+  	oklch(46.76% 0.00005 271.152),
+  	oklch(100% 0.00011 271.152)
+  );
+  --altcha-color-primary: oklch(40.279% 0.2449 268.131);
+  --altcha-color-primary-content: oklch(100% 0.00011 271.152);
+  --altcha-color-success: oklch(55.748% 0.18968 142.511);
+  --altcha-color-success-content: oklch(100% 0.00011 271.152);
+  --altcha-checkbox-border-color: light-dark(
+  	oklch(66.494% 0.00233 15.434),
+  	oklch(51.028% 0.00006 271.152)
+  );
+  --altcha-checkbox-border-radius: 5px;
+  --altcha-checkbox-border-width: var(--altcha-border-width);
+  --altcha-checkbox-outline: 2px solid var(--altcha-checkbox-outline-color);
+  --altcha-checkbox-outline-color: -webkit-focus-ring-color;
+  --altcha-checkbox-outline-offset: 2px;
+  --altcha-checkbox-size: 22px;
+  --altcha-checkbox-transition-duration: var(--altcha-transition-duration);
+  --altcha-input-background-color: var(--altcha-color-base);
+  --altcha-input-border-radius: 3px;
+  --altcha-input-border-width: 1px;
+  --altcha-input-color: var(--altcha-color-base-content);
+  --altcha-max-width: 320px;
+  --altcha-padding: 0.75rem;
+  --altcha-popover-arrow-size: 6px;
+  --altcha-popover-color: var(--altcha-border-color);
+  --altcha-shadow: drop-shadow(3px 3px 6px oklch(0% 0 0 / 0.2));
+  --altcha-spinner-color: var(--altcha-color-base-content);
+  --altcha-switch-background-color: var(--altcha-color-neutral);
+  --altcha-switch-border-radius: calc(infinity * 1px);
+  --altcha-switch-height: var(--altcha-checkbox-size);
+  --altcha-switch-padding: 0.25rem;
+  --altcha-switch-width: calc(var(--altcha-checkbox-size) * 1.75);
+  --altcha-switch-toggle-border-radius: 100%;
+  --altcha-switch-toggle-color: var(--altcha-color-neutral-content);
+  --altcha-switch-toggle-size: calc(
+  	var(--altcha-switch-height) - calc(var(--altcha-switch-padding) * 2)
+  );
+  --altcha-transition-duration: 0.6s;
+  --altcha-z-index: 99999999;
+  --altcha-z-index-popover: 999999999;
+}
+
+@supports (-moz-appearance: none) {
+  :root {
+    --altcha-checkbox-outline-color: var(--altcha-color-primary);
+  }
+}
+.altcha {
+  all: revert-layer;
+  display: none;
+  font-family: inherit;
+  font-size: inherit;
+  position: relative;
+}
+.altcha[data-visible] {
+  display: block;
+}
+.altcha-popover, .altcha-popover * {
+  all: revert-layer;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: 1.25;
+}
+.altcha * {
+  all: revert-layer;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: 1.25;
+}
+.altcha a, .altcha-popover a {
+  color: currentColor;
+  text-decoration: none;
+}
+.altcha a:hover, .altcha-popover a:hover {
+  color: currentColor;
+}
+.altcha-main {
+  align-items: start;
+  background-color: var(--altcha-color-base);
+  border: var(--altcha-border-width, 1px) solid var(--altcha-border-color);
+  border-radius: var(--altcha-border-radius, 0);
+  color: var(--altcha-color-base-content);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-content: space-between;
+  padding: var(--altcha-padding);
+  max-width: var(--altcha-max-width, 100%);
+}
+.altcha-main > * {
+  display: flex;
+  width: 100%;
+}
+.altcha-main > *:first-child {
+  flex-grow: 1;
+}
+.altcha-checkbox-wrap {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  gap: 0.5rem;
+}
+.altcha-checkbox-wrap > * {
+  display: flex;
+}
+.altcha-logo {
+  opacity: 0.7;
+}
+.altcha-footer {
+  align-items: center;
+  display: flex;
+  flex-grow: 1;
+  gap: 0.5rem;
+  justify-content: flex-end;
+  font-size: 0.7rem;
+  opacity: 0.7;
+}
+.altcha-footer p {
+  margin: 0;
+  padding: 0;
+}
+.altcha-error {
+  font-size: 0.85rem;
+}
+.altcha-button {
+  align-items: center;
+  background: var(--altcha-color-primary);
+  border: var(--altcha-input-border-width) solid var(--altcha-color-primary);
+  border-radius: var(--altcha-input-border-radius);
+  color: var(--altcha-color-primary-content);
+  cursor: pointer;
+  display: flex;
+  font-size: 0.9rem;
+  gap: 0.5rem;
+  padding: 0.35rem;
+}
+.altcha-button:focus {
+  border-color: var(--altcha-color-primary);
+  outline: var(--altcha-checkbox-outline);
+  outline-offset: var(--altcha-checkbox-outline-offset);
+}
+.altcha-button > .altcha-spinner, .altcha-button > svg {
+  height: 20px;
+  width: 20px;
+}
+.altcha-button-secondary {
+  background: transparent;
+  border-color: var(--altcha-color-neutral);
+  color: var(--altcha-color-neutral-content);
+}
+.altcha-input {
+  background: var(--altcha-input-background-color);
+  border: var(--altcha-input-border-width) solid var(--altcha-color-neutral);
+  border-radius: var(--altcha-input-border-radius);
+  color: var(--altcha-input-color);
+  flex-grow: 1;
+  font-size: 1rem;
+  min-width: 0;
+  padding: 0.25rem;
+  width: auto;
+}
+.altcha-input:focus {
+  border-color: var(--altcha-color-primary);
+  outline: var(--altcha-checkbox-outline);
+  outline-offset: var(--altcha-checkbox-outline-offset);
+}
+.altcha-spinner {
+  animation: altcha-rotate 0.6s linear infinite;
+  border-radius: 100%;
+  border: var(--altcha-checkbox-border-width) solid var(--altcha-spinner-color);
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+  opacity: 0.7;
+}
+.altcha-popover {
+  background-color: var(--altcha-color-base);
+  border: var(--altcha-border-width) solid var(--altcha-border-color);
+  border-radius: var(--altcha-border-radius);
+  color: var(--altcha-color-base-content);
+  filter: var(--altcha-shadow);
+  position: absolute;
+  left: calc(var(--altcha-padding) / 2);
+  max-width: calc(var(--altcha-max-width) - var(--altcha-padding));
+  top: calc(var(--altcha-padding) + var(--altcha-checkbox-size) + var(--altcha-popover-arrow-size));
+  z-index: var(--altcha-z-index-popover);
+}
+.altcha-popover-arrow {
+  border: var(--altcha-popover-arrow-size) solid transparent;
+  border-bottom-color: var(--altcha-popover-color);
+  content: "";
+  height: 0;
+  left: calc(var(--altcha-checkbox-size) / 2);
+  position: absolute;
+  top: calc(var(--altcha-popover-arrow-size) * -2);
+  width: 0;
+}
+.altcha-popover-content {
+  max-height: 100dvh;
+  overflow: auto;
+  padding: var(--altcha-padding);
+}
+.altcha-popover[data-top=true][data-display=standard] {
+  bottom: calc(100% - (var(--altcha-padding) - var(--altcha-popover-arrow-size)));
+  top: auto;
+}
+.altcha-popover[data-top=true][data-display=standard] .altcha-popover-arrow {
+  border-bottom-color: transparent;
+  border-top-color: var(--altcha-popover-color);
+  bottom: calc(var(--altcha-popover-arrow-size) * -2);
+  top: auto;
+}
+.altcha-popover[data-variant=error] {
+  --altcha-popover-color: var(--altcha-color-error);
+  background-color: var(--altcha-color-error);
+  border-color: var(--altcha-color-error);
+  color: var(--altcha-color-error-content);
+}
+.altcha-popover[data-variant=error] .altcha-popover-content {
+  padding: calc(var(--altcha-padding) / 1.5) var(--altcha-padding);
+}
+.altcha-popover[data-display=overlay] {
+  animation: altcha-overlay-slidein 0.5s forwards;
+  left: 50%;
+  position: fixed;
+  top: 45%;
+  transform: translate(-50%, -50%);
+  width: var(--altcha-max-width);
+  z-index: var(--altcha-z-index);
+}
+.altcha-popover[data-display=bottomsheet] {
+  animation: altcha-bottomsheet-slideup 0.5s forwards;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom: 0;
+  bottom: -100%;
+  left: 50%;
+  position: fixed;
+  top: auto;
+  transform: translate(-50%, 0);
+  width: var(--altcha-max-width);
+  z-index: var(--altcha-z-index);
+}
+.altcha-popover[data-display=bottomsheet] .altcha-popover-content {
+  padding-bottom: calc(var(--altcha-padding) * 2);
+}
+.altcha-popover-backdrop {
+  background: var(--altcha-color-base-content);
+  bottom: 0;
+  left: 0;
+  opacity: 0.1;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transition: opacity 0.5s;
+  z-index: var(--altcha-z-index);
+}
+.altcha-popover-close {
+  color: var(--altcha-color-base-content);
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1rem;
+  height: 1.25rem;
+  line-height: 0.95;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  text-shadow: 0 0 1px var(--altcha-color-base);
+  top: -1.5rem;
+  width: 1.25rem;
+  z-index: var(--altcha-z-index);
+}
+[dir=rtl] .altcha-popover {
+  left: auto;
+  right: calc(var(--altcha-padding) / 2);
+}
+[dir=rtl] .altcha-popover-arrow {
+  left: auto;
+  right: calc(var(--altcha-checkbox-size) / 2);
+}
+[dir=rtl] .altcha-popover-close {
+  left: 0;
+  right: auto;
+}
+.altcha-popover[data-display=bottomsheet] .altcha-footer, .altcha-popover[data-display=overlay] .altcha-footer {
+  align-items: center;
+  justify-content: center;
+  padding-top: 1rem;
+  gap: 0.5rem;
+}
+.altcha-popover[data-display=bottomsheet] .altcha-footer svg, .altcha-popover[data-display=overlay] .altcha-footer svg {
+  height: 18px;
+  width: 18px;
+  vertical-align: middle;
+}
+.altcha-code-challenge > form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.altcha-code-challenge-title {
+  font-weight: 600;
+}
+.altcha-code-challenge-text {
+  font-size: 0.85rem;
+}
+.altcha-code-challenge-image {
+  background: white;
+  border: var(--altcha-input-border-width) solid var(--altcha-color-neutral);
+  border-radius: var(--altcha-input-border-radius);
+  object-fit: contain;
+  height: 50px;
+}
+.altcha-code-challenge-row {
+  display: flex;
+  gap: 0.5rem;
+}
+.altcha-code-challenge-buttons {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: var(--altcha-padding);
+  justify-content: space-between;
+}
+.altcha-code-challenge-buttons button {
+  justify-content: center;
+  width: 100%;
+}
+.altcha-checkbox {
+  cursor: pointer;
+  height: var(--altcha-checkbox-size);
+  position: relative;
+  width: var(--altcha-checkbox-size);
+}
+.altcha-checkbox input {
+  appearance: none;
+  background: var(--altcha-input-background-color);
+  border: var(--altcha-checkbox-border-width, 2px) solid var(--altcha-checkbox-border-color);
+  border-radius: var(--altcha-checkbox-border-radius);
+  cursor: pointer;
+  height: var(--altcha-checkbox-size);
+  left: 0;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  width: var(--altcha-checkbox-size);
+}
+.altcha-checkbox input:before {
+  border-radius: var(--altcha-checkbox-border-radius);
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: var(--altcha-color-neutral);
+  display: block;
+  transform: scale(0);
+}
+.altcha-checkbox input:checked {
+  background-color: var(--altcha-color-success);
+  border-color: var(--altcha-color-success);
+}
+.altcha-checkbox input:checked::before {
+  background-color: var(--altcha-color-success);
+  opacity: 0;
+  transform: scale(2.2);
+  transition: all var(--altcha-checkbox-transition-duration) ease;
+  transition-delay: 0.1s;
+}
+.altcha-checkbox svg {
+  --altcha-radio-svg-size: calc(var(--altcha-checkbox-size) * 0.5);
+  --altcha-radio-svg-offset: calc(var(--altcha-checkbox-size) * 0.25);
+  fill: none;
+  left: var(--altcha-radio-svg-offset);
+  height: var(--altcha-radio-svg-size);
+  opacity: 0;
+  position: absolute;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 16px;
+  stroke-dashoffset: 16px;
+  top: var(--altcha-radio-svg-offset);
+  transform: translate3d(0, 0, 0);
+  width: var(--altcha-radio-svg-size);
+}
+.altcha-checkbox input:checked + svg {
+  color: var(--altcha-color-success-content);
+  opacity: 1;
+  stroke-dashoffset: 0;
+  transition: all var(--altcha-checkbox-transition-duration) ease;
+  transition-delay: 0.1s;
+}
+.altcha-checkbox-spinner {
+  display: none;
+  left: 0;
+  height: var(--altcha-checkbox-size);
+  position: absolute;
+  top: 0;
+  width: var(--altcha-checkbox-size);
+}
+.altcha-checkbox[data-loading=true] input {
+  appearance: none;
+  opacity: 0;
+  pointer-events: none;
+}
+.altcha-checkbox[data-loading=true] .altcha-checkbox-spinner {
+  display: block;
+}
+.altcha-checkbox-native {
+  height: var(--altcha-checkbox-size);
+  position: relative;
+  width: var(--altcha-checkbox-size);
+}
+.altcha-checkbox-native input {
+  height: var(--altcha-checkbox-size);
+  margin: 0;
+  width: var(--altcha-checkbox-size);
+}
+.altcha-checkbox-native-spinner {
+  display: none;
+  left: 0;
+  height: var(--altcha-checkbox-size);
+  position: absolute;
+  top: 0;
+  width: var(--altcha-checkbox-size);
+}
+.altcha-checkbox-native[data-loading=true] input {
+  appearance: none;
+  opacity: 0;
+  pointer-events: none;
+}
+.altcha-checkbox-native[data-loading=true] .altcha-checkbox-native-spinner {
+  display: block;
+}
+.altcha-switch {
+  align-items: center;
+  border-radius: var(--altcha-switch-border-radius);
+  background-color: var(--altcha-switch-background-color);
+  display: flex;
+  height: var(--altcha-switch-height);
+  padding: var(--altcha-switch-padding);
+  position: relative;
+  width: var(--altcha-switch-width);
+}
+.altcha-switch:focus-within {
+  outline: var(--altcha-checkbox-outline);
+  outline-offset: var(--altcha-checkbox-outline-offset);
+}
+.altcha-switch input {
+  appearance: none;
+  cursor: pointer;
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.altcha-switch-toggle {
+  align-items: center;
+  background-color: var(--altcha-switch-toggle-color);
+  border-radius: var(--altcha-switch-toggle-border-radius);
+  cursor: pointer;
+  display: flex;
+  height: var(--altcha-switch-toggle-size);
+  justify-content: center;
+  left: var(--altcha-switch-padding);
+  position: absolute;
+  transition: width 150ms ease-out, left 150ms ease-out;
+  width: var(--altcha-switch-toggle-size);
+}
+.altcha-switch-spinner {
+  display: none;
+  height: var(--altcha-switch-toggle-size);
+  width: var(--altcha-switch-toggle-size);
+}
+.altcha-switch[data-loading=true] {
+  pointer-events: none;
+}
+.altcha-switch[data-loading=true] .altcha-switch-spinner {
+  display: block;
+}
+.altcha-switch[data-loading=true] .altcha-switch-toggle {
+  background-color: transparent;
+  left: calc(50% - var(--altcha-switch-toggle-size) / 2);
+}
+[data-state=verified] .altcha-switch {
+  --altcha-switch-background-color: var(--altcha-color-success);
+}
+[data-state=verified] .altcha-switch-toggle {
+  background-color: var(--altcha-color-success-content);
+  left: calc(100% - var(--altcha-switch-height) + var(--altcha-switch-padding));
+}
+[dir=rtl] .altcha-switch-toggle {
+  left: calc(100% - var(--altcha-switch-height) + var(--altcha-switch-padding));
+}
+[dir=rtl][data-state=verified] .altcha-switch-toggle {
+  left: var(--altcha-switch-padding);
+}
+.altcha-floating-arrow {
+  border: 6px solid transparent;
+  border-bottom-color: var(--altcha-border-color);
+  content: "";
+  height: 0;
+  left: 12px;
+  position: absolute;
+  top: -12px;
+  width: 0;
+}
+.altcha-overlay-backdrop {
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transition: opacity var(--altcha-transition-duration);
+  z-index: var(--altcha-z-index);
+}
+.altcha-overlay-close {
+  display: inline-block;
+  color: currentColor;
+  cursor: pointer;
+  font-size: 1rem;
+  height: 1rem;
+  line-height: 0.85;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  text-shadow: 0 0 1px var(--altcha-color-base);
+  top: -1.5rem;
+  width: 1rem;
+  z-index: var(--altcha-z-index);
+}
+.altcha[data-display=overlay] {
+  animation: altcha-overlay-slidein var(--altcha-transition-duration) forwards;
+  filter: var(--altcha-shadow);
+  left: 50%;
+  opacity: 0;
+  position: fixed;
+  top: 45%;
+  transform: translate(-50%, -50%);
+  z-index: var(--altcha-z-index);
+}
+.altcha[data-display=overlay] .altcha-main {
+  width: var(--altcha-max-width);
+}
+.altcha[data-display=floating] {
+  display: none;
+  filter: var(--altcha-shadow);
+  left: var(--altcha-floating-left, -100%);
+  position: fixed;
+  top: var(--altcha-floating-top, -100%);
+  z-index: var(--altcha-z-index);
+}
+.altcha[data-display=floating] .altcha-main {
+  width: var(--altcha-max-width);
+}
+.altcha[data-display=floating][data-floating-position=top] .altcha-floating-arrow {
+  border-bottom-color: transparent;
+  border-top-color: var(--altcha-border-color);
+  bottom: -12px;
+  top: auto;
+}
+.altcha[data-display=floating][data-visible] {
+  display: flex;
+}
+.altcha[data-display=bar] {
+  bottom: -100%;
+  filter: var(--altcha-shadow);
+  left: 0;
+  position: fixed;
+  right: 0;
+  transition: bottom var(--altcha-transition-duration), top var(--altcha-transition-duration);
+  z-index: var(--altcha-z-index);
+}
+.altcha[data-display=bar] .altcha-main {
+  align-items: center;
+  border-radius: 0;
+  border-width: var(--altcha-border-width) 0 0 0;
+  flex-direction: row;
+  max-width: 100% !important;
+}
+.altcha[data-display=bar] .altcha-main > * {
+  width: auto;
+}
+.altcha[data-display=bar][data-placement=top] {
+  bottom: auto;
+  top: -100%;
+}
+.altcha[data-display=bar][data-placement=top] .altcha-main {
+  border-width: 0 0 var(--altcha-border-width) 0;
+}
+.altcha[data-display=bar][data-placement=bottom]:not([data-state=unverified]) {
+  bottom: 0;
+}
+.altcha[data-display=bar][data-placement=top]:not([data-state=unverified]) {
+  top: 0;
+}
+.altcha[data-display=invisible] {
+  display: none;
+}
+
+@keyframes altcha-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes altcha-bottomsheet-slideup {
+  100% {
+    bottom: 0;
+  }
+}
+@keyframes altcha-overlay-slidein {
+  100% {
+    opacity: 1;
+    top: 50%;
+  }
+}</style><link rel="modulepreload" as="script" crossorigin="" href="/wp-content/themes/cmms-theme-fhb/assets/dist/1.75/PostShortcutList.js"><link rel="modulepreload" as="script" crossorigin="" href="/wp-content/themes/cmms-theme-fhb/assets/dist/1.75/PostShortcut.js"><link rel="modulepreload" as="script" crossorigin="" href="/wp-content/themes/cmms-theme-fhb/assets/dist/1.75/LoadMoreButton.js"><link rel="modulepreload" as="script" crossorigin="" href="/wp-content/themes/cmms-theme-fhb/assets/dist/1.75/swiper.js"></head>
+<body class="archive category category-regional-nachrichten category-27 wp-theme-cmms-theme-soylent wp-child-theme-cmms-theme-fhb" data-base="https://www.mainwelle.de" data-json="https://www.mainwelle.de/wp-content/themes/cmms-theme-fhb/tmp/">
+
+
+<div id="app-container" data-v-app=""><!----><!----><div id="app" class="--header_open"><header id="masthead" class="site-header" role="banner"><div class="header-banner"><div class="social-shortcuts"><a href="https://wa.me/491709907000" rel="nofollow" class="ss-whatsapp" target="_blank" title="Whatsapp" aria-label="Whatsapp"><span>Whatsapp</span></a><a href="https://de-de.facebook.com/RadioMainwelle/" rel="nofollow" class="ss-facebook" target="_blank" title="Facebook" aria-label="Facebook"><span>Facebook</span></a><a href="https://www.instagram.com/radio_mainwelle/" rel="nofollow" class="ss-instagram" target="_blank" title="Instagram" aria-label="Instagram"><span>Instagram</span></a><a href="https://www.youtube.com/@RadioMainwelle" rel="nofollow" class="ss-youtube" target="" title="YouTube" aria-label="YouTube"><span>YouTube</span></a><a href="/kontakt/" rel="nofollow" class="ss-mail" target="" title="Studiomail" aria-label="Studiomail"><span>Studiomail</span></a><a href="tel://+499217575040" rel="nofollow" class="ss-phone" target="_blank" title="Hotline" aria-label="Hotline"><span>Hotline</span></a></div><div class="header-banner__logo-container"><a href="/" class="logo" title="Radio Mainwelle" aria-label="Radio Mainwelle: Zur Startseite"><picture><img src="https://www.mainwelle.de/storage/thumbs/600x/r:1692985031/40896.png" alt="Radio Mainwelle"></picture></a></div><div class="header-tools-wrapper"><div class="header-tools"><a href="/blitzer-verkehr/" class="header-tools__item --speedcam" title="Blitzer" aria-label="Blitzer"><span class="header-tools__item__icon iconSet">videocam</span><span class="header-tools__item__label --highlight">5</span></a><a href="/blitzer-verkehr/" class="header-tools__item --traffic" title="Verkehrsmeldungen" aria-label="Verkehrsmeldungen"><span class="header-tools__item__icon iconSet">directions_car</span><span class="header-tools__item__label --highlight">8</span></a><a href="/wetter/" class="header-tools__item --weather" title="Wetter" aria-label="Wetter"><span class="header-tools__item__icon  wi wi-cloudy"></span><!----></a></div><button class="search-button iconSet" title="Suche" aria-label="Suche anzeigen"> search </button></div><!----></div></header><div class="menu__wrapper"><ul class="menu__primary"><li class="--text-size-m menu__primary__item"><a href="/startseite" class="menu__primary__item__label">Start</a></li><li class="--text-size-m menu__primary__item"><a href="/highlights/" class="menu__primary__item__label">Highlights</a></li><li class="--text-size-m menu__primary__item --has-children"><button class="menu__primary__item__label" aria-label="Untermenu von Aktuelles öffnen">Aktuelles</button></li><li class="--text-size-m menu__primary__item --has-children"><button class="menu__primary__item__label" aria-label="Untermenu von Dein Sender öffnen">Dein Sender</button></li><li class="--text-size-m menu__primary__item --has-children"><button class="menu__primary__item__label" aria-label="Untermenu von Mediathek öffnen">Mediathek</button></li><li class="--text-size-m menu__primary__item"><a href="https://radio-mainwelle.radiogutscheine.de/gutscheine/aktionen/mainwelle-freizeitspass_128" target="_blank" class="menu__primary__item__label">Mainshop</a></li><li class="--text-size-m menu__primary__item"><a href="https://www.mainwelle-jobs.de/" target="_blank" class="menu__primary__item__label">Jobbox</a></li><li class="--text-size-m menu__primary__item"><a href="/kontakt/" class="menu__primary__item__label">Kontakt</a></li></ul><!----></div><div id="page" class="hfeed site"><div id="main" class="site-main"><main class="content"><div class="idvl-editor"><div class="block-wrapper --padding_default --padding_header --size_content"><!----><!----><div class="block single"><div class="slot"><!----><div class="element soylent spacer"></div></div></div></div><div class="block-wrapper --padding_default --size_content"><!----><!----><div class="block single"><div class="slot"><!----><div class="element soylentRadio headline --type-h1"><!----><div class="headline__text"><h1 class="headline__title --text-size-xxxl --text-weight-medium">Regional-Nachrichten</h1><!----></div></div></div></div></div><div class="block-wrapper --padding_default --size_content"><!----><!----><div class="block single"><div class="slot"><!----><div class="element soylent postShortcutList"><div class="post-shortcuts -col-4"><a href="/jean-paul-platz-vor-friedrichsforum-nur-eine-uebergangsloesung-2413149/" class="post-shortcut"><span class="post-shortcut__thumbnail"><span class="responsive-image -fill --visible _align-img-center-center" data-uid="f6c8b9c6-0d2c-4de1-ced1-620c93f096b8"><span style="background-image: url(&quot;https://www.mainwelle.de/storage/thumbs/320x/obfufc3agz6e5.webp&quot;);"></span><span class="responsive-image-copyright">Stadt Bayreuth</span></span></span><span class="post-shortcut__entry"><span class="post-shortcut__entry__hover"></span><!----><span class="post-shortcut__entry__meta"><span class="post-shortcut__entry__meta__label --text-size-xxs"><span class="iconSet --text-size-s">notes</span><span class="--text-weight-medium">03</span> . September 2026 16:07 <!----></span><!----></span><!----><span class="post-shortcut__entry__title --text-size-l --text-weight-medium">Jean-Paul-Platz vor Friedrichsforum: nur eine Übergangslösung</span><span class="post-shortcut__entry__description" style="overflow: hidden; min-height: 96px;"></span></span></a><a href="/neue-bruecke-fuer-drosendorf-bei-hollfeld-2412684/" class="post-shortcut"><span class="post-shortcut__thumbnail"><span class="responsive-image -fill --visible _align-img-center-center" data-uid="09ef7162-e77d-433f-ab61-fb10fb759a47"><span style="background-image: url(&quot;https://www.mainwelle.de/storage/thumbs/320x/i4gnyh2la5mrc.webp&quot;);"></span><span class="responsive-image-copyright">Landkreis Bayreuth</span></span></span><span class="post-shortcut__entry"><span class="post-shortcut__entry__hover"></span><!----><span class="post-shortcut__entry__meta"><span class="post-shortcut__entry__meta__label --text-size-xxs"><span class="iconSet --text-size-s">notes</span><span class="--text-weight-medium">03</span> . September 2026 13:05 <!----></span><!----></span><!----><span class="post-shortcut__entry__title --text-size-l --text-weight-medium">Neue Brücke für Drosendorf bei Hollfeld</span><span class="post-shortcut__entry__description" style="overflow: hidden; min-height: 96px;"></span></span></a><a href="/ausbildungsstart-bei-medi-2412648/" class="post-shortcut"><span class="post-shortcut__thumbnail"><span class="responsive-image -fill --visible _align-img-center-center" data-uid="b5d06f41-9220-4ab3-92ac-8fb03743c42e"><span style="background-image: url(&quot;https://www.mainwelle.de/storage/thumbs/320x/8w9kad37xt8i1.webp&quot;);"></span><span class="responsive-image-copyright">www.medi.de</span></span></span><span class="post-shortcut__entry"><span class="post-shortcut__entry__hover"></span><!----><span class="post-shortcut__entry__meta"><span class="post-shortcut__entry__meta__label --text-size-xxs"><span class="iconSet --text-size-s">notes</span><span class="--text-weight-medium">03</span> . September 2026 12:52 <!----></span><!----></span><!----><span class="post-shortcut__entry__title --text-size-l --text-weight-medium">Ausbildungsstart bei medi</span><span class="post-shortcut__entry__description" style="overflow: hidden; min-height: 96px;"></span></span></a><a href="/diesel-prozess-urteil-ist-gefallen-2412396/" class="post-shortcut"><span class="post-shortcut__thumbnail"><span class="responsive-image -fill --visible _align-img-center-center" data-uid="c8224934-112c-422f-e8c7-8432ad0521cf"><span style="background-image: url(&quot;https://www.mainwelle.de/storage/thumbs/320x/yi4iv34ljci9o.webp&quot;);"></span><span class="responsive-image-copyright">KI-generiert</span></span></span><span class="post-shortcut__entry"><span class="post-shortcut__entry__hover"></span><!----><span class="post-shortcut__entry__meta"><span class="post-shortcut__entry__meta__label --text-size-xxs"><span class="iconSet --text-size-s">notes</span><span class="--text-weight-medium">03</span> . September 2026 11:51 <!----></span><!----></span><!----><span class="post-shortcut__entry__title --text-size-l --text-weight-medium">Diesel-Prozess: Urteil ist gefallen</span><span class="post-shortcut__entry__description" style="overflow: hidden; min-height: 96px;"></span></span></a><a href="/handwerksjahr-in-oberfranken-ein-jahr-lang-praktikant-in-verschiedenen-berufen-2412120/" class="post-shortcut"><span class="post-shortcut__thumbnail"><span class="responsive-image -fill --visible _align-img-center-center" data-uid="3ed88676-0a30-4240-eb5d-b9a8e6c83967"><span style="background-image: url(&quot;https://www.mainwelle.de/storage/thumbs/320x/dnutzgavu14w4.webp&quot;);"></span><span class="responsive-image-copyright">IG BAU</span></span></span><span class="post-shortcut__entry"><span class="post-shortcut__entry__hover"></span><!----><span class="post-shortcut__entry__meta"><span class="post-shortcut__entry__meta__label --text-size-xxs"><span class="iconSet --text-size-s">notes</span><span class="--text-weight-medium">03</span> . September 2026 09:03 <!----></span><!----></span><!----><span class="post-shortcut__entry__title --text-size-l --text-weight-medium">Handwerksjahr in Oberfranken: Ein Jahr lang Praktikant in verschiedenen Berufen</span><span class="post-shortcut__entry__description" style="overflow: hidden; min-height: 96px;"></span></span></a><a href="/taxi-in-flammen-feuerwehreinsatz-auf-pendlerparkplatz-bei-muenchberg-2412084/" class="post-shortcut"><span class="post-shortcut__thumbnail"><span class="responsive-image -fill --visible _align-img-center-center" data-uid="358fdcd5-f37e-493f-e438-30e6ec31ba0b"><span style="background-image: url(&quot;https://www.mainwelle.de/storage/thumbs/320x/uny632pu198vc.webp&quot;);"></span><span class="responsive-image-copyright">KI generiert</span></span></span><span class="post-shortcut__entry"><span class="post-shortcut__entry__hover"></span><!----><span class="post-shortcut__entry__meta"><span class="post-shortcut__entry__meta__label --text-size-xxs"><span class="iconSet --text-size-s">notes</span><span class="--text-weight-medium">03</span> . September 2026 08:43 <!----></span><!----></span><!----><span class="post-shortcut__entry__title --text-size-l --text-weight-medium">Taxi in Flammen: Feuerwehreinsatz auf Pendlerparkplatz bei Münchberg</span><span class="post-shortcut__entry__description" style="overflow: hidden; min-height: 96px;"></span></span></a><a href="/kerwa-vorbei-verkehrszeichen-weg-2411997/" class="post-shortcut"><span class="post-shortcut__thumbnail"><span class="responsive-image -fill --visible _align-img-center-center" data-uid="34f46721-a01a-4e5e-f4a7-9f00bc00837d"><span style="background-image: url(&quot;https://www.mainwelle.de/storage/thumbs/320x/tilgq1sczgwso.webp&quot;);"></span><span class="responsive-image-copyright">Bayerische Polizei</span></span></span><span class="post-shortcut__entry"><span class="post-shortcut__entry__hover"></span><!----><span class="post-shortcut__entry__meta"><span class="post-shortcut__entry__meta__label --text-size-xxs"><span class="iconSet --text-size-s">notes</span><span class="--text-weight-medium">03</span> . September 2026 07:09 <!----></span><!----></span><!----><span class="post-shortcut__entry__title --text-size-l --text-weight-medium">Kerwa vorbei – Verkehrszeichen weg</span><span class="post-shortcut__entry__description" style="overflow: hidden; min-height: 96px;"></span></span></a><a href="/verstaerkung-fuer-mittelfeld-dominic-schmidt-wechselt-zur-oldschdod-2411292/" class="post-shortcut"><span class="post-shortcut__thumbnail"><span class="responsive-image -fill --visible _align-img-center-center" data-uid="08c19c21-4eca-488d-edc5-4213d37f66eb"><span style="background-image: url(&quot;https://www.mainwelle.de/storage/thumbs/320x/jzxswcld5r84t.webp&quot;);"></span><span class="responsive-image-copyright">Simon Helfensdörfer</span></span></span><span class="post-shortcut__entry"><span class="post-shortcut__entry__hover"></span><!----><span class="post-shortcut__entry__meta"><span class="post-shortcut__entry__meta__label --text-size-xxs"><span class="iconSet --text-size-s">notes</span><span class="--text-weight-medium">02</span> . September 2026 19:00 <!----></span><!----></span><!----><span class="post-shortcut__entry__title --text-size-l --text-weight-medium">Verstärkung für Mittelfeld: Dominic Schmidt wechselt zur Oldschdod</span><span class="post-shortcut__entry__description" style="overflow: hidden; min-height: 96px;"></span></span></a><a href="/sparkassen-moneedn-mondooch-startet-ab-7-september-2411493/" class="post-shortcut"><span class="post-shortcut__thumbnail"><span class="responsive-image -fill _align-img-center-center" data-uid="c75d2f90-4594-4502-dd71-5d381e7f61c3"><span style=""></span><!----></span></span><span class="post-shortcut__entry"><span class="post-shortcut__entry__hover"></span><!----><span class="post-shortcut__entry__meta"><span class="post-shortcut__entry__meta__label --text-size-xxs"><span class="iconSet --text-size-s">notes</span><span class="--text-weight-medium">02</span> . September 2026 18:35 <!----></span><!----></span><!----><span class="post-shortcut__entry__title --text-size-l --text-weight-medium">Sparkassen-Moneedn-Mondooch startet ab 7. September</span><span class="post-shortcut__entry__description" style="overflow: hidden; min-height: 96px;"></span></span></a><a href="/stadtwerke-warnen-vor-vorschnellen-smart-meter-vertraegen-2411382/" class="post-shortcut"><span class="post-shortcut__thumbnail"><span class="responsive-image -fill _align-img-center-center" data-uid="d4ef200c-282b-44b1-ed93-b4e81e8931d7"><span style=""></span><span class="responsive-image-copyright">Stadtwerke Bayreuth</span></span></span><span class="post-shortcut__entry"><span class="post-shortcut__entry__hover"></span><!----><span class="post-shortcut__entry__meta"><span class="post-shortcut__entry__meta__label --text-size-xxs"><span class="iconSet --text-size-s">notes</span><span class="--text-weight-medium">02</span> . September 2026 17:56 <!----></span><!----></span><!----><span class="post-shortcut__entry__title --text-size-l --text-weight-medium">Stadtwerke warnen vor vorschnellen Smart-Meter-Verträgen</span><span class="post-shortcut__entry__description" style="overflow: hidden; min-height: 96px;"></span></span></a><a href="/wildpark-hundshaupten-go-fuer-barrierefreien-rundweg-2411244/" class="post-shortcut"><span class="post-shortcut__thumbnail"><span class="responsive-image -fill _align-img-center-center" data-uid="aaade588-53fa-4629-fc34-99a0db8f5462"><span style=""></span><!----></span></span><span class="post-shortcut__entry"><span class="post-shortcut__entry__hover"></span><!----><span class="post-shortcut__entry__meta"><span class="post-shortcut__entry__meta__label --text-size-xxs"><span class="iconSet --text-size-s">notes</span><span class="--text-weight-medium">02</span> . September 2026 17:17 <!----></span><!----></span><!----><span class="post-shortcut__entry__title --text-size-l --text-weight-medium">Wildpark Hundshaupten: Go für barrierefreien Rundweg</span><span class="post-shortcut__entry__description" style="overflow: hidden; min-height: 96px;"></span></span></a><a href="/rechtsradikale-parolen-und-hitlergruss-2411130/" class="post-shortcut"><span class="post-shortcut__thumbnail"><span class="responsive-image -fill _align-img-center-center" data-uid="1d89747b-84bd-42e3-f00d-4106d0aa5d3e"><span style=""></span><span class="responsive-image-copyright">Bayerische Polizei</span></span></span><span class="post-shortcut__entry"><span class="post-shortcut__entry__hover"></span><!----><span class="post-shortcut__entry__meta"><span class="post-shortcut__entry__meta__label --text-size-xxs"><span class="iconSet --text-size-s">notes</span><span class="--text-weight-medium">02</span> . September 2026 16:25 <!----></span><!----></span><!----><span class="post-shortcut__entry__title --text-size-l --text-weight-medium">Rechtsradikale Parolen und Hitlergruß</span><span class="post-shortcut__entry__description" style="overflow: hidden; min-height: 96px;"></span></span></a><a href="/tote-hosen-ausverkauft-das-ist-zu-beachten-2410599/" class="post-shortcut"><span class="post-shortcut__thumbnail"><span class="responsive-image -fill _align-img-center-center" data-uid="6269c731-df0e-4b72-9bd1-2166a98f9009"><span style=""></span><span class="responsive-image-copyright">Stadt Bayreuth</span></span></span><span class="post-shortcut__entry"><span class="post-shortcut__entry__hover"></span><!----><span class="post-shortcut__entry__meta"><span class="post-shortcut__entry__meta__label --text-size-xxs"><span class="iconSet --text-size-s">notes</span><span class="--text-weight-medium">02</span> . September 2026 12:58 <!----></span><!----></span><!----><span class="post-shortcut__entry__title --text-size-l --text-weight-medium">Tote Hosen ausverkauft: das ist zu beachten</span><span class="post-shortcut__entry__description" style="overflow: hidden; min-height: 96px;"></span></span></a><a href="/weniger-aepfel-aber-gute-qualitaet-2410596/" class="post-shortcut"><span class="post-shortcut__thumbnail"><span class="responsive-image -fill _align-img-center-center" data-uid="42ca00eb-542f-4435-d6f2-d675daa379d9"><span style=""></span><span class="responsive-image-copyright">Landratsamt Bayreuth</span></span></span><span class="post-shortcut__entry"><span class="post-shortcut__entry__hover"></span><!----><span class="post-shortcut__entry__meta"><span class="post-shortcut__entry__meta__label --text-size-xxs"><span class="iconSet --text-size-s">notes</span><span class="--text-weight-medium">02</span> . September 2026 12:52 <!----></span><!----></span><!----><span class="post-shortcut__entry__title --text-size-l --text-weight-medium">Weniger Äpfel - aber gute Qualität</span><span class="post-shortcut__entry__description" style="overflow: hidden; min-height: 96px;"></span></span></a><a href="/die-naechsten-gaeste-in-bayreuth-bayreuth-baroque-startet-am-freitag-2410593/" class="post-shortcut"><span class="post-shortcut__thumbnail"><span class="responsive-image -fill _align-img-center-center" data-uid="dcd42bc4-3661-47bf-886b-a9d0bdee03dd"><span style=""></span><span class="responsive-image-copyright">Bayreuth Baroque, Andreas Harbach</span></span></span><span class="post-shortcut__entry"><span class="post-shortcut__entry__hover"></span><!----><span class="post-shortcut__entry__meta"><span class="post-shortcut__entry__meta__label --text-size-xxs"><span class="iconSet --text-size-s">notes</span><span class="--text-weight-medium">02</span> . September 2026 12:49 <!----></span><!----></span><!----><span class="post-shortcut__entry__title --text-size-l --text-weight-medium">Die nächsten Gäste in Bayreuth: Bayreuth Baroque startet am Freitag</span><span class="post-shortcut__entry__description" style="overflow: hidden; min-height: 96px;"></span></span></a><a href="/bundesweiter-warntag-alarm-auch-in-bayreuth-2410413/" class="post-shortcut"><span class="post-shortcut__thumbnail"><span class="responsive-image -fill _align-img-center-center" data-uid="bfad456f-3176-4fda-a7a8-1c15e2941f5c"><span style=""></span><span class="responsive-image-copyright">KI generiert </span></span></span><span class="post-shortcut__entry"><span class="post-shortcut__entry__hover"></span><!----><span class="post-shortcut__entry__meta"><span class="post-shortcut__entry__meta__label --text-size-xxs"><span class="iconSet --text-size-s">notes</span><span class="--text-weight-medium">02</span> . September 2026 12:11 <!----></span><!----></span><!----><span class="post-shortcut__entry__title --text-size-l --text-weight-medium">Bundesweiter Warntag: Alarm auch in Bayreuth</span><span class="post-shortcut__entry__description" style="overflow: hidden; min-height: 96px;"></span></span></a></div><div class="button-container --load-more"><a aria-current="page" href="/kategorie/nachrichten/regional-nachrichten/" class="-active --active button"><span class="button__label"><span class="button__text">Mehr anzeigen</span></span></a></div><!----></div></div></div></div><div class="block-wrapper --padding_default --size_content"><!----><!----><div class="block single"><div class="slot"><!----><div class="element soylent spacer"></div></div></div></div></div></main><div class="to-top"><span class="icon iconSet">expand_less</span></div></div><!----><footer id="colophon" class="site-footer" role="contentinfo"><div class="idvl-editor"></div><div class="footer-wrapper"><div class="footer-navigation-wrapper"><div class="toolbar"><div class="social-shortcuts"><a href="https://wa.me/491709907000" rel="nofollow" class="ss-whatsapp" target="_blank" title="Whatsapp" aria-label="Whatsapp"><span>Whatsapp</span></a><a href="https://de-de.facebook.com/RadioMainwelle/" rel="nofollow" class="ss-facebook" target="_blank" title="Facebook" aria-label="Facebook"><span>Facebook</span></a><a href="https://www.instagram.com/radio_mainwelle/" rel="nofollow" class="ss-instagram" target="_blank" title="Instagram" aria-label="Instagram"><span>Instagram</span></a><a href="https://www.youtube.com/@RadioMainwelle" rel="nofollow" class="ss-youtube" target="" title="YouTube" aria-label="YouTube"><span>YouTube</span></a><a href="/kontakt/" rel="nofollow" class="ss-mail" target="" title="Studiomail" aria-label="Studiomail"><span>Studiomail</span></a><a href="tel://+499217575040" rel="nofollow" class="ss-phone" target="_blank" title="Hotline" aria-label="Hotline"><span>Hotline</span></a></div></div><div class="footer-nav"><div class="menu-footer-container"><ul id="menu-footer" class="footer-menu"><li class="item --text-size-xl"><a href="/" class="link"><span class="nav-label">Start</span></a><!----></li><li class="item --text-size-xl"><a href="/kontakt/" class="link"><span class="nav-label">Kontakt</span></a><!----></li><li class="item --text-size-xl"><a href="/impressum/" class="link"><span class="nav-label">Impressum</span></a><!----></li><li class="item --text-size-xl"><a href="/agb/" class="link"><span class="nav-label">AGB</span></a><!----></li><li class="item --text-size-xl"><a href="/datenschutz/" class="link"><span class="nav-label">Datenschutz</span></a><!----></li><li class="item --text-size-xl"><a href="/feed" class="link"><span class="nav-label">RSS-Feed</span></a><!----></li><li class="item cmms-show-usercentrics-layer --text-size-xl"><a href="#" class="link"><span class="nav-label">Privatsphäre</span></a><!----></li><li class="item --text-size-xl"><a href="/wahlwerbung/" class="link"><span class="nav-label">Wahlwerbung</span></a><!----></li></ul></div></div></div></div></footer></div><div class="player-card"><div class="player-card__toolbar"><button class="player-card__toolbar__tool --expand"><span class="iconSet">expand_more</span></button><a href="/playlist/" class="player-card__toolbar__tool" title="Songsuche"><span class="iconSet">manage_search</span></a><a href="/wochenprogramm/" class="player-card__toolbar__tool" title="Programm"><span class="iconSet">today</span></a><button class="player-card__toolbar__tool player__drawer-switch" title="Mehr"><div class="iconSet">library_music</div><div class="iconSet">close</div></button></div><div class="player-card__media"><img class="player-card__media__cover" src="https://www.mainwelle.de/storage/thumbs/120x120c/44004.webp" alt="DEINE REGION. DEINE MUSIK."><div class="player-card__media__track"><div class="player-card__media__track__interpret --text-size-xs --text-weight-medium">RADIO MAINWELLE</div><div class="player-card__media__track__title --text-size-xxs" title="DEINE REGION. DEINE MUSIK.">DEINE REGION. DEINE MUSIK.</div><div class="player-card__controls"><!----><button class="player__control --play"><span class="iconSet">play_arrow</span></button><!----></div></div></div><!----><div class="player-card__entry"><span class="player-card__entry__onair"><span class="iconSet">equalizer</span><span class="player-card__entry__onair__label --text-size-xxs">on Air</span></span><span class="player-card__entry__show --text-size-xxs --text-weight-medium" title="Die Christian-Höreth-Show">Die Christian-Höreth-Show</span><span class="player-card__entry__host --text-size-xxs" title="mit Christian Höreth">mit Christian Höreth</span></div></div><!----><!----><!----><!----><!----></div></div>
+<link rel="stylesheet" as="style" href="https://assets.welocal.world/fonts/Material+Icons:1-11-4" onload="this.onload=null;this.rel='stylesheet'" type="text/css" media="all"><script>var soylent_menus={"primary":[{"id":804,"parent_id":0,"label":"Start","classes":[],"url":"\/startseite","target":"","object":{"object_id":804,"custom":"custom"}},{"id":40917,"parent_id":0,"label":"Highlights","classes":[],"url":"https:\/\/www.mainwelle.de\/highlights\/","target":"","object":{"object_id":40908,"post_type":"page"}},{"id":40920,"parent_id":0,"label":"Aktuelles","classes":[],"url":"#","target":"","object":{"object_id":40920,"custom":"custom"},"items":[{"id":40932,"parent_id":40920,"label":"Region","classes":[],"url":"https:\/\/www.mainwelle.de\/kategorie\/nachrichten\/regional-nachrichten\/","target":"","object":{"object_id":27,"taxonomy":"category"}},{"id":40923,"parent_id":40920,"label":"Bayern","classes":[],"url":"https:\/\/www.mainwelle.de\/kategorie\/nachrichten\/dpa-nachrichten\/bayern-nachrichten\/","target":"","object":{"object_id":57,"taxonomy":"category"}},{"id":40926,"parent_id":40920,"label":"Deutschland","classes":[],"url":"https:\/\/www.mainwelle.de\/kategorie\/nachrichten\/dpa-nachrichten\/deutschland-nachrichten\/","target":"","object":{"object_id":54,"taxonomy":"category"}},{"id":40929,"parent_id":40920,"label":"Welt","classes":[],"url":"https:\/\/www.mainwelle.de\/kategorie\/nachrichten\/dpa-nachrichten\/welt-nachrichten\/","target":"","object":{"object_id":60,"taxonomy":"category"}}]},{"id":40935,"parent_id":0,"label":"Dein Sender","classes":[],"url":"#","target":"","object":{"object_id":40935,"custom":"custom"},"items":[{"id":40938,"parent_id":40935,"label":"H\u00f6ren","classes":[],"url":"#","target":"","object":{"object_id":40938,"custom":"custom"},"items":[{"id":41064,"parent_id":40938,"label":"Radioplayer","classes":[],"url":"https:\/\/consoles.radioplayer.cloud\/276214\/index.html","target":"","object":{"object_id":41064,"custom":"custom"}},{"id":41067,"parent_id":40938,"label":"App","classes":[],"url":"https:\/\/www.mainwelle.de\/app\/","target":"","object":{"object_id":40968,"post_type":"page"}},{"id":41076,"parent_id":40938,"label":"Playlist","classes":[],"url":"https:\/\/www.mainwelle.de\/playlist\/","target":"","object":{"object_id":41046,"post_type":"page"}}]},{"id":40941,"parent_id":40935,"label":"\u00dcber Uns","classes":[],"url":"#","target":"","object":{"object_id":40941,"custom":"custom"},"items":[{"id":40956,"parent_id":40941,"label":"Team","classes":[],"url":"https:\/\/www.mainwelle.de\/team-fhb\/","target":"","object":{"object_id":26388,"post_type":"page"}},{"id":41073,"parent_id":40941,"label":"Programm","classes":[],"url":"https:\/\/www.mainwelle.de\/wochenprogramm\/","target":"","object":{"object_id":41055,"post_type":"page"}},{"id":41070,"parent_id":40941,"label":"Empfang","classes":[],"url":"https:\/\/www.mainwelle.de\/empfang\/","target":"","object":{"object_id":40989,"post_type":"page"}}]},{"id":40944,"parent_id":40935,"label":"Service","classes":[],"url":"#","target":"","object":{"object_id":40944,"custom":"custom"},"items":[{"id":40965,"parent_id":40944,"label":"Blitzer- und Verkehr","classes":[],"url":"https:\/\/www.mainwelle.de\/blitzer-verkehr\/","target":"","object":{"object_id":897,"post_type":"page"}},{"id":40962,"parent_id":40944,"label":"Wetter","classes":[],"url":"https:\/\/www.mainwelle.de\/wetter\/","target":"","object":{"object_id":867,"post_type":"page"}},{"id":40959,"parent_id":40944,"label":"Tiersuche","classes":[],"url":"https:\/\/www.mainwelle.de\/tiersuche\/","target":"","object":{"object_id":198,"post_type":"page"}},{"id":429465,"parent_id":40944,"label":"Veranstaltungskalender","classes":[],"url":"https:\/\/www.mainwelle.de\/veranstaltungskalender\/","target":"","object":{"object_id":429438,"post_type":"page"}},{"id":115452,"parent_id":40944,"label":"Ratgeber","classes":[],"url":"https:\/\/www.mainwelle.de\/kategorie\/ratgeber\/","target":"","object":{"object_id":120,"taxonomy":"category"}},{"id":527811,"parent_id":40944,"label":"Abfallberatung","classes":[],"url":"https:\/\/www.mainwelle.de\/abfallberatung\/","target":"","object":{"object_id":474944,"post_type":"page"}}]},{"id":40947,"parent_id":40935,"label":"Werbung","classes":[],"url":"#","target":"","object":{"object_id":40947,"custom":"custom"},"items":[{"id":41082,"parent_id":40947,"label":"Leistungen","classes":[],"url":"https:\/\/www.mainwelle.de\/leistungen\/","target":"","object":{"object_id":41028,"post_type":"page"}},{"id":41085,"parent_id":40947,"label":"Argumente","classes":[],"url":"https:\/\/www.mainwelle.de\/argumente\/","target":"","object":{"object_id":40977,"post_type":"page"}},{"id":41079,"parent_id":40947,"label":"Mediadaten","classes":[],"url":"https:\/\/www.mainwelle.de\/mediadaten\/","target":"","object":{"object_id":41037,"post_type":"page"}},{"id":1616068,"parent_id":40947,"label":"Meet Mainwelle","classes":[],"url":"https:\/\/www.mainwelle.de\/meetmainwelle\/","target":"","object":{"object_id":1616053,"post_type":"page"}}]}]},{"id":40950,"parent_id":0,"label":"Mediathek","classes":[],"url":"#","target":"","object":{"object_id":40950,"custom":"custom"},"items":[{"id":41091,"parent_id":40950,"label":"Videothek","classes":[],"url":"https:\/\/www.mainwelle.de\/mediathek\/kategorie\/video\/videothek\/","target":"","object":{"object_id":165,"taxonomy":"cmms_mediacategory"}},{"id":50898,"parent_id":40950,"label":"Audiothek","classes":[],"url":"https:\/\/www.mainwelle.de\/mediathek\/kategorie\/audio\/audiotehk\/","target":"","object":{"object_id":543,"taxonomy":"cmms_mediacategory"}},{"id":113772,"parent_id":40950,"label":"Fotothek","classes":[],"url":"https:\/\/www.mainwelle.de\/fotothek\/","target":"","object":{"object_id":41007,"post_type":"page"}}]},{"id":41106,"parent_id":0,"label":"Mainshop","classes":[],"url":"https:\/\/radio-mainwelle.radiogutscheine.de\/gutscheine\/aktionen\/mainwelle-freizeitspass_128","target":"","object":{"object_id":41106,"custom":"custom"}},{"id":810,"parent_id":0,"label":"Jobbox","classes":[],"url":"https:\/\/www.mainwelle-jobs.de\/","target":"_blank","object":{"object_id":810,"custom":"custom"}},{"id":40953,"parent_id":0,"label":"Kontakt","classes":[],"url":"https:\/\/www.mainwelle.de\/kontakt\/","target":"","object":{"object_id":783,"post_type":"page"}}],"social":[{"id":858,"parent_id":0,"label":"Whatsapp","classes":["whatsapp"],"url":"https:\/\/wa.me\/491709907000","target":"_blank","object":{"object_id":858,"custom":"custom"}},{"id":843,"parent_id":0,"label":"Facebook","classes":["facebook"],"url":"https:\/\/de-de.facebook.com\/RadioMainwelle\/","target":"_blank","object":{"object_id":843,"custom":"custom"}},{"id":855,"parent_id":0,"label":"Instagram","classes":["instagram"],"url":"https:\/\/www.instagram.com\/radio_mainwelle\/","target":"_blank","object":{"object_id":855,"custom":"custom"}},{"id":113781,"parent_id":0,"label":"YouTube","classes":["youtube"],"url":"https:\/\/www.youtube.com\/@RadioMainwelle","target":"","object":{"object_id":113781,"custom":"custom"}},{"id":861,"parent_id":0,"label":"Studiomail","classes":["mail"],"url":"\/kontakt\/","target":"","object":{"object_id":861,"custom":"custom"}},{"id":864,"parent_id":0,"label":"Hotline","classes":["phone"],"url":"tel:\/\/+499217575040","target":"_blank","object":{"object_id":864,"custom":"custom"}}],"footer":[{"id":41094,"parent_id":0,"label":"Start","classes":[],"url":"\/","target":"","object":{"object_id":41094,"custom":"custom"}},{"id":840,"parent_id":0,"label":"Kontakt","classes":[],"url":"https:\/\/www.mainwelle.de\/kontakt\/","target":"","object":{"object_id":783,"post_type":"page"}},{"id":837,"parent_id":0,"label":"Impressum","classes":[],"url":"https:\/\/www.mainwelle.de\/impressum\/","target":"","object":{"object_id":774,"post_type":"page"}},{"id":828,"parent_id":0,"label":"AGB","classes":[],"url":"https:\/\/www.mainwelle.de\/agb\/","target":"","object":{"object_id":537,"post_type":"page"}},{"id":831,"parent_id":0,"label":"Datenschutz","classes":[],"url":"https:\/\/www.mainwelle.de\/datenschutz\/","target":"","object":{"object_id":747,"post_type":"page"}},{"id":41100,"parent_id":0,"label":"RSS-Feed","classes":[],"url":"\/feed","target":"","object":{"object_id":41100,"custom":"custom"}},{"id":41103,"parent_id":0,"label":"Privatsph\u00e4re","classes":["cmms-show-usercentrics-layer"],"url":"#","target":"","object":{"object_id":41103,"custom":"custom"}},{"id":1993086,"parent_id":0,"label":"Wahlwerbung","classes":[],"url":"https:\/\/www.mainwelle.de\/wahlwerbung\/","target":"","object":{"object_id":1993071,"post_type":"page"}}]};</script>
+<script>var soylent_settings ={"home_url":"\/","title":"Radio Mainwelle","header_logo":"https:\/\/www.mainwelle.de\/storage\/thumbs\/600x\/r:1692985031\/40896.png","current_data":true,"reader_mode":true,"search":{"filter_options":[{"group":"","label":"Alle"},{"group":"beitraege","label":"Beitr\u00e4ge"},{"group":"medien","label":"Medien"}],"default_group":""},"smart_banner":{"active":false,"label":false,"description":false,"id_ios":false,"id_android":false,"show_on_startup":false,"logo":""},"app_review_prompt":false,"tcf_query_key":"aw_0_req.userConsentV2","child_settings":{"header_pages":{"weather":"\/wetter\/","traffic":"\/blitzer-verkehr\/"},"player":{"songsearch_page":"\/playlist\/","program_page":"\/wochenprogramm\/","channel_page":null,"music_page":"\/playlist\/","music_label":"Musik"},"channels":{"default_channel_id":25}}};</script>
+<script>var soylent_footer =[];</script>
+<script>var soylent_page_data ={"title":"Bundesweiter Warntag: Alarm auch in Bayreuth","meta":[],"blocks":[{"block_type":"single","elements":[{"type":"soylent","subtype":"spacer","data":[],"slot_settings":{}}],"settings":{"soylent_class":"--padding_header --size_content"}},{"block_type":"single","elements":[{"type":"soylentRadio","subtype":"headline","data":{"tag":"h1","text":"Regional-Nachrichten","subline":""},"slot_settings":{}}],"settings":{"soylent_class":" --size_content"}},{"block_type":"single","elements":[{"type":"soylent","subtype":"postShortcutList","data":{"items":[{"post_id":2413149,"post_type":"post","date":{"y":2026,"m":9,"d":3,"h":16,"i":7,"s":40,"m_txt":"September","m_short_txt":"Sep.","d_txt":"Donnerstag","ts":1788451660,"utc":false,"date_txt":"03.09.2026","time_txt":"16:07","datetime_txt":"03. Sep. 2026 16:07"},"title":"Jean-Paul-Platz vor Friedrichsforum: nur eine \u00dcbergangsl\u00f6sung","kicker":"","teaser":"","excerpt":"Bleibt das jetzt so? fragen sich einige, die am Jean-Paul-Platz in Bayreuth vorbeikommen. Dort stehen aktuell B\u00e4nke, viele Fahrradst\u00e4nder und Blumen am. Aber nein, das ist jetzt erstmal nur eine \u00dcbergangsl\u00f6sung. Die Stadt Bayreuth plant dort langfristig eine komplette Neugestaltung. Dabei sollen der Jean-Paul-Platz und die Ludwigstra\u00dfe gemeinsam geplant werden, damit am Ende alles zusammenpasst.","url":"https:\/\/www.mainwelle.de\/jean-paul-platz-vor-friedrichsforum-nur-eine-uebergangsloesung-2413149\/","type":"post","image":{"media_id":"obfufc3agz6e5","width":6346,"height":4150,"mime_type":"image\/jpeg","date":"17. Jul 2026 10:27","alt":"","copyright":"Stadt Bayreuth","show_ad_label":false},"show_ad_label":false,"categories":[{"name":"Regional-Nachrichten","slug":"regional-nachrichten"}]},{"post_id":2412684,"post_type":"post","date":{"y":2026,"m":9,"d":3,"h":13,"i":5,"s":58,"m_txt":"September","m_short_txt":"Sep.","d_txt":"Donnerstag","ts":1788440758,"utc":false,"date_txt":"03.09.2026","time_txt":"13:05","datetime_txt":"03. Sep. 2026 13:05"},"title":"Neue Br\u00fccke f\u00fcr Drosendorf bei Hollfeld","kicker":"","teaser":"","excerpt":"Drosendorf bei Hollfeld hat jetzt eine neue Br\u00fccke! Nach f\u00fcnf Monaten Baustelle, hat der Landkreis Bayreuth die neue Br\u00fccke er\u00f6ffnen k\u00f6nnen. Seit gestern (02.09.) rollt der Verkehr wieder dr\u00fcber. Die alte Br\u00fccke war sanierungsbed\u00fcrftig und hat nicht mehr den heutigen Verkehrsanforderungen entsprochen. Deshalb musste sie dringend erneuert werden. Mit der Neuerrichtung der Br\u00fccke ist die","url":"https:\/\/www.mainwelle.de\/neue-bruecke-fuer-drosendorf-bei-hollfeld-2412684\/","type":"post","image":{"media_id":"i4gnyh2la5mrc","width":5184,"height":3456,"mime_type":"image\/jpeg","date":"03. Sep 2026 13:06","alt":"","copyright":"Landkreis Bayreuth","show_ad_label":false},"show_ad_label":false,"categories":[{"name":"Regional-Nachrichten","slug":"regional-nachrichten"}]},{"post_id":2412648,"post_type":"post","date":{"y":2026,"m":9,"d":3,"h":12,"i":52,"s":42,"m_txt":"September","m_short_txt":"Sep.","d_txt":"Donnerstag","ts":1788439962,"utc":false,"date_txt":"03.09.2026","time_txt":"12:52","datetime_txt":"03. Sep. 2026 12:52"},"title":"Ausbildungsstart bei medi","kicker":"","teaser":"","excerpt":"Diese Woche haben viele neue Azubis in der Region gestartet \u2013 auch bei medi. 21 junge Menschen mit unterschiedlichen Begabungen und Interessen starten ins Berufsleben. Laut einer Pressemitteilung sollen sie ihre Talente einbringen, Neues lernen und sich fachlich und pers\u00f6nlich weiterentwickeln. Mit den Siegeln \u201eGreat Place To Work\u00ae und \u201eGreat Start\u201c ausgezeichnet gilt medi als","url":"https:\/\/www.mainwelle.de\/ausbildungsstart-bei-medi-2412648\/","type":"post","image":{"media_id":"8w9kad37xt8i1","width":2109,"height":1116,"mime_type":"image\/jpeg","date":"03. Sep 2026 12:53","alt":"","copyright":"www.medi.de","show_ad_label":false},"show_ad_label":false,"categories":[{"name":"Regional-Nachrichten","slug":"regional-nachrichten"}]},{"post_id":2412396,"post_type":"post","date":{"y":2026,"m":9,"d":3,"h":11,"i":51,"s":48,"m_txt":"September","m_short_txt":"Sep.","d_txt":"Donnerstag","ts":1788436308,"utc":false,"date_txt":"03.09.2026","time_txt":"11:51","datetime_txt":"03. Sep. 2026 11:51"},"title":"Diesel-Prozess: Urteil ist gefallen","kicker":"","teaser":"","excerpt":"Zumindest am Landgericht Hof ist es der letzte Prozesstag f\u00fcr ihn gewesen. Das Gericht hat den ehemaligen Mineral\u00f6lh\u00e4ndler aus Schwarzenbach an der Saale wegen Steuerhehlerei zu sechs Jahren und drei Monaten Gef\u00e4ngnis verurteilt. Er hat minderwertigen Kraftstoff an seinen Tankstellen als Diesel weiterverkauft. Das Gericht sagt, er habe von Anfang an davon gewusst. Daf\u00fcr muss","url":"https:\/\/www.mainwelle.de\/diesel-prozess-urteil-ist-gefallen-2412396\/","type":"post","image":{"media_id":"yi4iv34ljci9o","width":1672,"height":941,"mime_type":"image\/png","date":"28. Apr 2026 14:40","alt":"","copyright":"KI-generiert","show_ad_label":false},"show_ad_label":false,"categories":[{"name":"Regional-Nachrichten","slug":"regional-nachrichten"}]},{"post_id":2412120,"post_type":"post","date":{"y":2026,"m":9,"d":3,"h":9,"i":3,"s":48,"m_txt":"September","m_short_txt":"Sep.","d_txt":"Donnerstag","ts":1788426228,"utc":false,"date_txt":"03.09.2026","time_txt":"09:03","datetime_txt":"03. Sep. 2026 09:03"},"title":"Handwerksjahr in Oberfranken: Ein Jahr lang Praktikant in verschiedenen Berufen","kicker":"","teaser":"","excerpt":"Oberfranken ist Pilotregion f\u00fcr das freiwillige Handwerksjahr. Das soll jungen Leuten bei der Berufswahl helfen. Alle drei Monate einen anderen Handwerksberuf intensiv kennenlernen, von der Kfz-Werkstatt zum Friseur und dann zum Beispiel zum Malermeister wechseln. Die l\u00e4ngeren Praktika sollen helfen, nach der Schule eine Entscheidung zu finden. Die Kreishandwerkerschaft im Raum Hof-Wunsiedel will damit die","url":"https:\/\/www.mainwelle.de\/handwerksjahr-in-oberfranken-ein-jahr-lang-praktikant-in-verschiedenen-berufen-2412120\/","type":"post","image":{"media_id":"dnutzgavu14w4","width":1772,"height":946,"mime_type":"image\/jpeg","date":"17. Aug 2026 08:52","alt":"","copyright":"IG BAU","show_ad_label":false},"show_ad_label":false,"categories":[{"name":"Regional-Nachrichten","slug":"regional-nachrichten"}]},{"post_id":2412084,"post_type":"post","date":{"y":2026,"m":9,"d":3,"h":8,"i":43,"s":52,"m_txt":"September","m_short_txt":"Sep.","d_txt":"Donnerstag","ts":1788425032,"utc":false,"date_txt":"03.09.2026","time_txt":"08:43","datetime_txt":"03. Sep. 2026 08:43"},"title":"Taxi in Flammen: Feuerwehreinsatz auf Pendlerparkplatz bei M\u00fcnchberg","kicker":"","teaser":"","excerpt":"Auf einem Pendlerparkplatz bei M\u00fcnchberg ist gestern Nachmittag (02.09.) ein Mercedes Taxi in Flammen aufgegangen. Der 38-j\u00e4hrige Fahrer ist von der A9 bei M\u00fcnchberg-Nord abgefahren und hat an der n\u00e4chsten Ampel bemerkt, dass sein Fahrzeug qualmt. Dann ist er auf den Pendlerparkplatz gefahren, um anzuhalten. Er konnte zum Gl\u00fcck noch rechtzeitig aussteigen, dann ist der","url":"https:\/\/www.mainwelle.de\/taxi-in-flammen-feuerwehreinsatz-auf-pendlerparkplatz-bei-muenchberg-2412084\/","type":"post","image":{"media_id":"uny632pu198vc","width":1536,"height":1024,"mime_type":"image\/png","date":"25. Sep 2025 10:53","alt":"","copyright":"KI generiert","show_ad_label":false},"show_ad_label":false,"categories":[{"name":"Regional-Nachrichten","slug":"regional-nachrichten"}]},{"post_id":2411997,"post_type":"post","date":{"y":2026,"m":9,"d":3,"h":7,"i":9,"s":31,"m_txt":"September","m_short_txt":"Sep.","d_txt":"Donnerstag","ts":1788419371,"utc":false,"date_txt":"03.09.2026","time_txt":"07:09","datetime_txt":"03. Sep. 2026 07:09"},"title":"Kerwa vorbei \u2013 Verkehrszeichen weg","kicker":"","teaser":"","excerpt":"Verkehrszeichen geklaut LIMMERSDORF, LKR. KULMBACH. Mehrere Verkehrszeichen entwendeten Unbekannte im Thurnauer Orstteil Limmersdorf. Den Diebstahl stellten Gemeindemitarbeiter fest, als sie die Beschilderung im Zusammenhang mit der \u201eLindenkirchweih\u201c abbauten. Sechs Schilder unterschiedlicher Art verschwanden im Zeitraum von Donnerstag, 27.08.2026, bis Mittwoch, 02.09.2026. Der Schaden bel\u00e4uft sich auf einen mittleren dreistelligen Betrag. Zeugenhinweise nimmt die Kulmbacher Polizei","url":"https:\/\/www.mainwelle.de\/kerwa-vorbei-verkehrszeichen-weg-2411997\/","type":"post","image":{"media_id":"tilgq1sczgwso","width":2000,"height":1335,"mime_type":"image\/jpeg","date":"02. Apr 2026 14:09","alt":"","copyright":"Bayerische Polizei","show_ad_label":false},"show_ad_label":false,"categories":[{"name":"Regional-Nachrichten","slug":"regional-nachrichten"}]},{"post_id":2411292,"post_type":"post","date":{"y":2026,"m":9,"d":2,"h":19,"i":0,"s":46,"m_txt":"September","m_short_txt":"Sep.","d_txt":"Mittwoch","ts":1788375646,"utc":false,"date_txt":"02.09.2026","time_txt":"19:00","datetime_txt":"02. Sep. 2026 19:00"},"title":"Verst\u00e4rkung f\u00fcr Mittelfeld: Dominic Schmidt wechselt zur Oldschdod","kicker":"","teaser":"","excerpt":"Die SpVgg Bayreuth hat am letzten Tag der Sommertransferperiode noch einmal auf dem Transfermarkt zugeschlagen: Dominic Schmidt wechselt von den W\u00fcrzburger Kickers nach Bayreuth und verst\u00e4rkt ab sofort das zentrale Mittelfeld der Altst\u00e4dter. Ausgebildet wurde Schmidt im Nachwuchs des FC Augsburg. F\u00fcr die zweite Mannschaft des Bundesligisten sammelte er anschlie\u00dfend seine ersten Erfahrungen im Herrenbereich","url":"https:\/\/www.mainwelle.de\/verstaerkung-fuer-mittelfeld-dominic-schmidt-wechselt-zur-oldschdod-2411292\/","type":"post","image":{"media_id":"jzxswcld5r84t","width":1920,"height":1080,"mime_type":"image\/jpeg","date":"24. Jul 2026 10:07","alt":"spvgg, oldschdod, Altstadt, spvgg bayreuth","copyright":"Simon Helfensd\u00f6rfer","show_ad_label":false},"show_ad_label":false,"categories":[{"name":"Regional-Nachrichten","slug":"regional-nachrichten"}]},{"post_id":2411493,"post_type":"post","date":{"y":2026,"m":9,"d":2,"h":18,"i":35,"s":7,"m_txt":"September","m_short_txt":"Sep.","d_txt":"Mittwoch","ts":1788374107,"utc":false,"date_txt":"02.09.2026","time_txt":"18:35","datetime_txt":"02. Sep. 2026 18:35"},"title":"Sparkassen-Moneedn-Mondooch startet ab 7. September","kicker":"","teaser":"","excerpt":"Gutes tun, Engagement sichtbar machen und regionale Herzensprojekte unterst\u00fctzen: Am 7. September startet der Moneedn-Mondooch der Sparkasse Bayreuth zusammen mit uns von Radio Mainwelle. Mit der neuen Spendenaktion werden jede Woche 1.000 Euro an eine gemeinn\u00fctzige Einrichtung aus der Region vergeben. Die Gewinner werden w\u00f6chentlich im Mainwecker bekannt gegeben. Das ist auch bereits die 7.","url":"https:\/\/www.mainwelle.de\/sparkassen-moneedn-mondooch-startet-ab-7-september-2411493\/","type":"post","image":{"media_id":"8kdrznviu4ggw","width":1920,"height":1080,"mime_type":"image\/png","date":"02. Sep 2024 12:51","alt":"","copyright":"","show_ad_label":false},"show_ad_label":false,"categories":[{"name":"Regional-Nachrichten","slug":"regional-nachrichten"}]},{"post_id":2411382,"post_type":"post","date":{"y":2026,"m":9,"d":2,"h":17,"i":56,"s":54,"m_txt":"September","m_short_txt":"Sep.","d_txt":"Mittwoch","ts":1788371814,"utc":false,"date_txt":"02.09.2026","time_txt":"17:56","datetime_txt":"02. Sep. 2026 17:56"},"title":"Stadtwerke warnen vor vorschnellen Smart-Meter-Vertr\u00e4gen","kicker":"","teaser":"","excerpt":"Post zum Smart Meter im Briefkasten? Dann lohnt sich ein genauer Blick. Bei den Stadtwerken Bayreuth haben sich wohl zuletzt mehrere Kunden gemeldet, die Angebote von anderen Messstellenbetreibern bekommen haben. Ein Smart Meter ist ein intelligenter Stromz\u00e4hler. Er erfasst den Stromverbrauch digital und kann die Daten automatisch \u00fcbermitteln. Die Stadtwerke stellen klar: Wegen solcher Anschreiben","url":"https:\/\/www.mainwelle.de\/stadtwerke-warnen-vor-vorschnellen-smart-meter-vertraegen-2411382\/","type":"post","image":{"media_id":592305,"width":690,"height":461,"mime_type":"image\/jpeg","date":"12. Mar 2024 19:46","alt":"","copyright":"Stadtwerke Bayreuth","show_ad_label":false},"show_ad_label":false,"categories":[{"name":"Regional-Nachrichten","slug":"regional-nachrichten"}]},{"post_id":2411244,"post_type":"post","date":{"y":2026,"m":9,"d":2,"h":17,"i":17,"s":46,"m_txt":"September","m_short_txt":"Sep.","d_txt":"Mittwoch","ts":1788369466,"utc":false,"date_txt":"02.09.2026","time_txt":"17:17","datetime_txt":"02. Sep. 2026 17:17"},"title":"Wildpark Hundshaupten: Go f\u00fcr barrierefreien Rundweg","kicker":"","teaser":"","excerpt":"Im Wildpark Hundshaupten geht der barrierefreie Ausbau weiter. Geplant ist eine neue Bogenbr\u00fccke, die k\u00fcnftig das Wolfsplateau mit dem Wildplateau verbindet. F\u00fcr den dritten Bauabschnitt stellt der Freistaat Bayern mehr als f\u00fcnf Millionen Euro F\u00f6rderung bereit. Umweltminister Thorsten Glauber und Tourismusministerin Michaela Kaniber haben jetzt offiziell den Startschuss f\u00fcr das Projekt gegeben. Thorsten Galuber: Der","url":"https:\/\/www.mainwelle.de\/wildpark-hundshaupten-go-fuer-barrierefreien-rundweg-2411244\/","type":"post","image":{"media_id":115182,"width":1290,"height":1290,"mime_type":"image\/jpeg","date":"11. Sep 2023 10:40","alt":"","copyright":"","show_ad_label":false},"show_ad_label":false,"categories":[{"name":"Regional-Nachrichten","slug":"regional-nachrichten"}]},{"post_id":2411130,"post_type":"post","date":{"y":2026,"m":9,"d":2,"h":16,"i":25,"s":31,"m_txt":"September","m_short_txt":"Sep.","d_txt":"Mittwoch","ts":1788366331,"utc":false,"date_txt":"02.09.2026","time_txt":"16:25","datetime_txt":"02. Sep. 2026 16:25"},"title":"Rechtsradikale Parolen und Hitlergru\u00df","kicker":"","teaser":"","excerpt":"Gleich zweimal rechtsradikale Parolen innerhalb von nur zwei Stunden. Und zweimal musste die Polizei daf\u00fcr ausr\u00fccken. Am Stadtparkett in Bayreuth soll gestern (01.09.) ein 41-J\u00e4hriger laut herumgeschrien, den Hitlergru\u00df gezeigt und rechtsradikale Parolen gerufen haben. Die Polizei hat ihn festgenommen, sp\u00e4ter ist er wegen eines m\u00f6glichen psychischen Ausnahmezustands ins Krankenhaus gekommen. Nur zwei Stunden sp\u00e4ter","url":"https:\/\/www.mainwelle.de\/rechtsradikale-parolen-und-hitlergruss-2411130\/","type":"post","image":{"media_id":"cko9zj2jpfmby","width":6000,"height":4000,"mime_type":"image\/jpeg","date":"02. Apr 2026 14:05","alt":"","copyright":"Bayerische Polizei","show_ad_label":false},"show_ad_label":false,"categories":[{"name":"Regional-Nachrichten","slug":"regional-nachrichten"}]},{"post_id":2410599,"post_type":"post","date":{"y":2026,"m":9,"d":2,"h":12,"i":58,"s":57,"m_txt":"September","m_short_txt":"Sep.","d_txt":"Mittwoch","ts":1788353937,"utc":false,"date_txt":"02.09.2026","time_txt":"12:58","datetime_txt":"02. Sep. 2026 12:58"},"title":"Tote Hosen ausverkauft: das ist zu beachten","kicker":"","teaser":"","excerpt":"Ausgebuchte Hotels, ausverkaufte Tickets und eine gro\u00dfe Vorfreude: das Tote Hosen Konzert n\u00e4chste Woche macht sich langsam bemerkbar in der Stadt Bayreuth. Am Mittwoch (09.09.) erwartet der Veranstalter 30.000 Fans auf dem Bayreuther Volksfestplatz. Und er r\u00e4t dringend dazu, das Auto stehen zu lassen. Rund um das Konzertgel\u00e4nde gibt es keine Parkm\u00f6glichkeiten. Besucher sollen stattdessen","url":"https:\/\/www.mainwelle.de\/tote-hosen-ausverkauft-das-ist-zu-beachten-2410599\/","type":"post","image":{"media_id":"mtgrl6xw0r321","width":1542,"height":887,"mime_type":"image\/jpeg","date":"25. Jun 2025 14:53","alt":"","copyright":"Stadt Bayreuth","show_ad_label":false},"show_ad_label":false,"categories":[{"name":"Regional-Nachrichten","slug":"regional-nachrichten"}]},{"post_id":2410596,"post_type":"post","date":{"y":2026,"m":9,"d":2,"h":12,"i":52,"s":35,"m_txt":"September","m_short_txt":"Sep.","d_txt":"Mittwoch","ts":1788353555,"utc":false,"date_txt":"02.09.2026","time_txt":"12:52","datetime_txt":"02. Sep. 2026 12:52"},"title":"Weniger \u00c4pfel - aber gute Qualit\u00e4t","kicker":"","teaser":"","excerpt":"Die Apfelernte in Franken l\u00e4uft \u2013 und die Qualit\u00e4t sieht in diesem Jahr gut aus. Allerdings f\u00e4llt die Menge deutlich kleiner aus als letztes Jahr. Die fr\u00e4nkischen Obstbauern rechnen bei Tafel\u00e4pfeln mit rund 15 Prozent weniger Ertrag. Gr\u00fcnde sind vor allem die lange Trockenheit und viele hei\u00dfe Tage im Sommer. Teilweise haben \u00c4pfel dadurch sogar","url":"https:\/\/www.mainwelle.de\/weniger-aepfel-aber-gute-qualitaet-2410596\/","type":"post","image":{"media_id":"lxjy2hirpvmif","width":1139,"height":769,"mime_type":"image\/jpeg","date":"08. Oct 2025 06:58","alt":"","copyright":"Landratsamt Bayreuth","show_ad_label":false},"show_ad_label":false,"categories":[{"name":"Regional-Nachrichten","slug":"regional-nachrichten"}]},{"post_id":2410593,"post_type":"post","date":{"y":2026,"m":9,"d":2,"h":12,"i":49,"s":11,"m_txt":"September","m_short_txt":"Sep.","d_txt":"Mittwoch","ts":1788353351,"utc":false,"date_txt":"02.09.2026","time_txt":"12:49","datetime_txt":"02. Sep. 2026 12:49"},"title":"Die n\u00e4chsten G\u00e4ste in Bayreuth: Bayreuth Baroque startet am Freitag","kicker":"","teaser":"","excerpt":"Die Festspielzeit ist gerade vorbei, und schon ab Freitag (04.09.) k\u00f6nnten die n\u00e4chsten G\u00e4ste in der Stadt unterwegs sein. Denn da startet die siebte Ausgabe des Bayreuth Baroque Opera Festivals. Bis zum 13. September gibt es Opern und Konzerte an mehreren historischen Spielorten in der Stadt. Los geht\u2019s im Markgr\u00e4flichen Opernhaus mit H\u00e4ndels \u201eFloridante\u201c. Au\u00dferdem","url":"https:\/\/www.mainwelle.de\/die-naechsten-gaeste-in-bayreuth-bayreuth-baroque-startet-am-freitag-2410593\/","type":"post","image":{"media_id":"35aj6tcsrbprc","width":2560,"height":1707,"mime_type":"image\/jpeg","date":"03. Sep 2025 14:49","alt":"","copyright":"Bayreuth Baroque, Andreas Harbach","show_ad_label":false},"show_ad_label":false,"categories":[{"name":"Regional-Nachrichten","slug":"regional-nachrichten"}]},{"post_id":2410413,"post_type":"post","date":{"y":2026,"m":9,"d":2,"h":12,"i":11,"s":20,"m_txt":"September","m_short_txt":"Sep.","d_txt":"Mittwoch","ts":1788351080,"utc":false,"date_txt":"02.09.2026","time_txt":"12:11","datetime_txt":"02. Sep. 2026 12:11"},"title":"Bundesweiter Warntag: Alarm auch in Bayreuth","kicker":"","teaser":"","excerpt":"Nicht erschrecken, wenn am 10. September pl\u00f6tzlich die Sirenen heulen und das Handy Alarm schl\u00e4gt. Um 11 Uhr startet der bundesweite Warntag \u2013 auch Bayreuth macht mit. Getestet werden unter anderem Cell Broadcast, Warn-Apps wie NINA und KatWarn sowie die Sirenen im Stadtgebiet. In Bayreuth ist zun\u00e4chst f\u00fcr eine Minute ein auf- und abschwellender Heulton","url":"https:\/\/www.mainwelle.de\/bundesweiter-warntag-alarm-auch-in-bayreuth-2410413\/","type":"post","image":{"media_id":"mmxgv8a9h0edd","width":1672,"height":941,"mime_type":"image\/png","date":"06. Jul 2026 15:16","alt":"","copyright":"KI generiert ","show_ad_label":false},"show_ad_label":false,"categories":[{"name":"Regional-Nachrichten","slug":"regional-nachrichten"}]}],"archive_url":"\/kategorie\/nachrichten\/regional-nachrichten\/","page":1,"total":13911,"amount":"16"},"slot_settings":{}}],"settings":{"soylent_class":" --size_content"}},{"block_type":"single","elements":[{"type":"soylent","subtype":"spacer","data":[],"slot_settings":{}}],"settings":{"soylent_class":" --size_content"}}],"tracking":{"ivw":null},"seo":{"canonical":"https:\/\/www.mainwelle.de\/kategorie\/nachrichten\/regional-nachrichten\/","meta":{"description":"Regional-Nachrichten | Radio Mainwelle"},"json_ld":null}};</script>
+<script>var soylent_features ={"CmmsPlayer":false,"Sso":false,"BlockAccessRestriction":false};</script><script id="cmms-plugin-lost_found-js-module" src="https://www.mainwelle.de/wp-content/plugins/cmms-plugin-lost_found/assets/js/lostfound.js" type="module"></script>
+<script id="cmms-theme-soylent-app-js-module" src="https://www.mainwelle.de/wp-content/themes/cmms-theme-fhb/assets/dist/1.75/app.js" type="module"></script>
+<script id="cmms-theme-soylent-app-legacy-polyfills-js-module" src="https://www.mainwelle.de/wp-content/themes/cmms-theme-fhb/assets/dist/1.75/polyfills-legacy.js" type="module"></script>
+<script id="cmms-theme-soylent-app-legacy-js-module" src="https://www.mainwelle.de/wp-content/themes/cmms-theme-fhb/assets/dist/1.75/app-legacy.js" type="module"></script>
+<script id="cmms-plugin-usercentrics-js" src="https://www.mainwelle.de/wp-content/plugins/cmms-plugin-usercentrics/assets/dist/1.4/js/frontend.js?ver=1.4"></script>
+<script id="cmms-ads-js" src="https://www.mainwelle.de/wp-content/plugins/cmms/assets/js/frontend/ads.min.js?ver=4.144"></script>
+<script id="videojs-js" src="https://www.mainwelle.de/wp-content/plugins/cmms/lib/../assets/videojs/7.20.3/video.min.js?ver=7.20.3"></script>
+<iframe name="__tcfapiLocator" style="display: none;"></iframe><script id="videojs-l10n-de-js" src="https://www.mainwelle.de/wp-content/plugins/cmms/lib/../assets/videojs/7.20.3/lang/de.js?ver=7.20.3"></script>
+<script id="videojs-playlist-js" src="https://www.mainwelle.de/wp-content/plugins/cmms/lib/../assets/videojs/plugins/videojs-playlist.min.js?ver=5.1.0"></script>
+<script id="videojs-playlist-ui-js" src="https://www.mainwelle.de/wp-content/plugins/cmms/lib/../assets/videojs/plugins/videojs-playlist-ui.min.js?ver=3.5.2"></script>
+<script id="cmms-player-js" src="https://www.mainwelle.de/wp-content/plugins/cmms/lib/../assets/dist/4.144/js/player.js?ver=4.144"></script>
+<script id="cmms-module-captcha-altcha-js" src="https://www.mainwelle.de/wp-content/modules/cmms-module-captcha/assets/dist/0.3/js/altcha.js?ver=0.3"></script>
+<script id="social-embeds-js" src="https://www.mainwelle.de/wp-content/themes/cmms-theme-soylent/assets/dist/4.24/js/social-embeds.js?ver=7.1"></script>
+<script type="text/javascript">
+var _paq = _paq || [];
+_paq.push(['setSiteId', 76]);
+_paq.push(['setTrackerUrl', '//www.mainwelle.de/matomo.php']);
+_paq.push(['setRequestMethod', 'POST']);
+_paq.push(['setCookieDomain', '*.mainwelle.de']);
+_paq.push(['setCustomDimension', 1, 'Website']);
+_paq.push(['requireCookieConsent']);
+_paq.push(['trackPageView']);
+_paq.push(['enableLinkTracking']);
+_paq.push(['enableHeartBeatTimer']);
+(function(){var d=document,g=d.createElement('script'),s=d.getElementsByTagName('script')[0];g.type='text/javascript';g.async=true;g.defer=true;g.src='//www.mainwelle.de/matomo.php';s.parentNode.insertBefore(g,s);})();
+</script>
+<script></script>	
+	
+</body></html>
