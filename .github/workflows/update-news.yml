@@ -28,10 +28,10 @@ jobs:
           python -m playwright install --with-deps chromium
 
       - name: Nachrichten abrufen
-        run: python scraper/scrape_news.py --debug
+        run: python scraper/scrape_news.py
 
       - name: Änderungen committen (falls vorhanden)
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "Nachrichten aktualisiert"
-          file_pattern: "docs/news.json debug_page.html"
+          file_pattern: docs/news.json
