@@ -28,7 +28,15 @@ jobs:
           python -m playwright install --with-deps chromium
 
       - name: Nachrichten abrufen
-        run: python scraper/scrape_news.py
+        run: python scraper/scrape_news.py --debug
+
+      - name: Debug-HTML als Artefakt hochladen
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: debug-page
+          path: debug_page.html
+          retention-days: 3
 
       - name: Änderungen committen (falls vorhanden)
         uses: stefanzweifel/git-auto-commit-action@v5
