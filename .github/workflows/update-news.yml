@@ -2,9 +2,9 @@ name: Mainwelle Dashboard aktualisieren
 
 on:
   schedule:
-    # Alle 15 Minuten. GitHub führt Cron-Jobs "best effort" aus,
+    # Alle 5 Minuten. GitHub führt Cron-Jobs "best effort" aus,
     # bei viel Last kann es ein paar Minuten Verzögerung geben.
-    - cron: "*/15 * * * *"
+    - cron: "*/5 * * * *"
   workflow_dispatch: {}  # manueller Start über den "Actions"-Tab möglich
 
 permissions:
