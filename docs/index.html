@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Mainwelle Regional-Dashboard</title>
+<meta name="viewport" content="width=1920, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --marine:#0c1859;
+    --markenblau:#218dce;
+    --hellblau:#89c9eb;
+    --weiss:#ffffff;
+    --schwarz:#161619;
+  }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html,body{
+    width:100%; height:100%;
+    background:var(--marine);
+    color:var(--weiss);
+    font-family:'Epilogue', sans-serif;
+    overflow:hidden;
+  }
+  body{
+    background-image:
+      linear-gradient(180deg, rgba(12,24,89,0.55) 0%, rgba(12,24,89,0.85) 70%, var(--marine) 100%),
+      url('assets/hintergrund-dezent_16-9.png');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    flex-direction:column;
+    height:100vh;
+  }
+
+  /* ---------- Kopfzeile ---------- */
+  header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:2.6vh 3.2vw 0 3.2vw;
+    flex-shrink:0;
+  }
+  header img.logo{ height:5.4vh; }
+  .clock-block{ text-align:right; }
+  .clock{
+    font-size:4.4vh;
+    font-weight:800;
+    line-height:1;
+    letter-spacing:0.01em;
+    font-variant-numeric: tabular-nums;
+  }
+  .date{
+    margin-top:0.6vh;
+    font-size:1.9vh;
+    font-weight:500;
+    color:var(--hellblau);
+  }
+
+  /* ---------- Zentrale Meldung ---------- */
+  main{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding:2vh 5vw;
+    min-height:0;
+  }
+  .region-tag{
+    display:inline-flex;
+    align-items:center;
+    gap:0.8vh;
+    align-self:flex-start;
+    font-size:2vh;
+    font-weight:600;
+    color:var(--hellblau);
+    margin-bottom:2vh;
+  }
+  .region-tag .dot{
+    width:1.1vh; height:1.1vh; border-radius:50%;
+    background:var(--markenblau);
+    box-shadow:0 0 0 0 rgba(33,141,206,0.6);
+    animation:pulse 2.4s infinite;
+  }
+  @keyframes pulse{
+    0%{ box-shadow:0 0 0 0 rgba(33,141,206,0.55); }
+    70%{ box-shadow:0 0 0 1.4vh rgba(33,141,206,0); }
+    100%{ box-shadow:0 0 0 0 rgba(33,141,206,0); }
+  }
+
+  .headline-wrap{ min-height:0; }
+  .headline{
+    font-size:7.4vh;
+    font-weight:900;
+    line-height:1.08;
+    letter-spacing:-0.01em;
+    max-width:78vw;
+    opacity:0;
+    transform:translateY(1.2vh);
+    transition:opacity 0.5s ease, transform 0.5s ease;
+  }
+  .headline.visible{ opacity:1; transform:translateY(0); }
+
+  .headline-meta{
+    margin-top:2.6vh;
+    font-size:2.1vh;
+    color:var(--hellblau);
+    font-weight:500;
+  }
+
+  .dots{
+    display:flex;
+    gap:1vh;
+    margin-top:4vh;
+  }
+  .dots span{
+    width:1vh; height:1vh; border-radius:50%;
+    background:rgba(255,255,255,0.28);
+    transition:background 0.3s ease, width 0.3s ease;
+  }
+  .dots span.active{
+    background:var(--weiss);
+    width:2.6vh;
+    border-radius:1vh;
+  }
+
+  .empty-state{
+    font-size:2.6vh;
+    color:var(--hellblau);
+    font-weight:500;
+    max-width:60vw;
+  }
+
+  /* ---------- Ticker ---------- */
+  .ticker{
+    flex-shrink:0;
+    background:var(--markenblau);
+    overflow:hidden;
+    white-space:nowrap;
+    height:7vh;
+    display:flex;
+    align-items:center;
+  }
+  .ticker-track{
+    display:inline-flex;
+    align-items:center;
+    animation:scroll 90s linear infinite;
+  }
+  .ticker-track span.item{
+    font-size:2.3vh;
+    font-weight:600;
+    padding:0 3.5vw 0 0;
+  }
+  .ticker-track span.sep{
+    color:var(--marine);
+    padding-right:3.5vw;
+    font-weight:900;
+  }
+  @keyframes scroll{
+    from{ transform:translateX(0); }
+    to{ transform:translateX(-50%); }
+  }
+
+  footer.status{
+    position:fixed;
+    bottom:0.6vh; left:3.2vw;
+    font-size:1.3vh;
+    color:rgba(255,255,255,0.35);
+  }
+</style>
+</head>
+<body>
+
+  <header>
+    <img class="logo" src="assets/logo-horizontal-weiss.png" alt="Radio Mainwelle">
+    <div class="clock-block">
+      <div class="clock" id="clock">--:--</div>
+      <div class="date" id="date">–</div>
+    </div>
+  </header>
+
+  <main>
+    <div class="region-tag"><span class="dot"></span> Regional-News &middot; Bayreuth &amp; die Region</div>
+    <div class="headline-wrap">
+      <div class="headline" id="headline">Nachrichten werden geladen …</div>
+      <div class="headline-meta" id="headline-meta"></div>
+    </div>
+    <div class="dots" id="dots"></div>
+  </main>
+
+  <div class="ticker">
+    <div class="ticker-track" id="ticker-track">
+      <span class="item">Nachrichten werden geladen …</span>
+    </div>
+  </div>
+
+  <footer class="status" id="status"></footer>
+
+<script>
+  const NEWS_URL = 'news.json';
+  const REFRESH_DATA_MS = 2 * 60 * 1000;   // Daten alle 2 Minuten neu laden
+  const ROTATE_MS = 12 * 1000;             // Schlagzeile alle 12 Sekunden wechseln
+
+  let items = [];
+  let rotateIndex = 0;
+
+  const clockEl = document.getElementById('clock');
+  const dateEl = document.getElementById('date');
+  const headlineEl = document.getElementById('headline');
+  const metaEl = document.getElementById('headline-meta');
+  const dotsEl = document.getElementById('dots');
+  const tickerEl = document.getElementById('ticker-track');
+  const statusEl = document.getElementById('status');
+
+  function updateClock(){
+    const now = new Date();
+    clockEl.textContent = now.toLocaleTimeString('de-DE', { hour:'2-digit', minute:'2-digit' });
+    dateEl.textContent = now.toLocaleDateString('de-DE', { weekday:'long', day:'2-digit', month:'long' });
+  }
+
+  function timeAgo(iso){
+    const diffMin = Math.round((Date.now() - new Date(iso).getTime()) / 60000);
+    if (diffMin < 1) return 'gerade eben';
+    if (diffMin === 1) return 'vor 1 Minute';
+    if (diffMin < 60) return `vor ${diffMin} Minuten`;
+    const diffH = Math.round(diffMin / 60);
+    if (diffH === 1) return 'vor 1 Stunde';
+    if (diffH < 24) return `vor ${diffH} Stunden`;
+    return new Date(iso).toLocaleDateString('de-DE', { day:'2-digit', month:'2-digit' });
+  }
+
+  function renderDots(){
+    dotsEl.innerHTML = '';
+    items.forEach((_, i) => {
+      const d = document.createElement('span');
+      if (i === rotateIndex) d.className = 'active';
+      dotsEl.appendChild(d);
+    });
+  }
+
+  function renderHeadline(){
+    if (items.length === 0){
+      headlineEl.textContent = 'Aktuell liegen keine neuen Meldungen vor.';
+      headlineEl.classList.add('visible');
+      metaEl.textContent = '';
+      return;
+    }
+    const item = items[rotateIndex];
+    headlineEl.classList.remove('visible');
+    setTimeout(() => {
+      headlineEl.textContent = item.title;
+      metaEl.textContent = timeAgo(item.published);
+      headlineEl.classList.add('visible');
+    }, 220);
+    renderDots();
+  }
+
+  function renderTicker(){
+    if (items.length === 0){
+      tickerEl.innerHTML = '<span class="item">Nachrichten werden geladen …</span>';
+      return;
+    }
+    const parts = items.map(i => `<span class="item">${escapeHtml(i.title)}</span><span class="sep">&#9670;</span>`);
+    // Inhalt verdoppeln, damit die Endlosschleife nahtlos wirkt.
+    tickerEl.innerHTML = parts.join('') + parts.join('');
+    // Laufzeit an Textmenge koppeln, damit die Geschwindigkeit gleich bleibt.
+    const duration = Math.max(40, items.length * 9);
+    tickerEl.style.animationDuration = duration + 's';
+  }
+
+  function escapeHtml(str){
+    const div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML;
+  }
+
+  async function loadNews(){
+    try{
+      const res = await fetch(NEWS_URL + '?t=' + Date.now(), { cache:'no-store' });
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      const data = await res.json();
+      if (Array.isArray(data.items) && data.items.length > 0){
+        items = data.items;
+        rotateIndex = 0;
+      }
+      if (data.generated_at){
+        statusEl.textContent = 'Letzte Aktualisierung: ' +
+          new Date(data.generated_at).toLocaleTimeString('de-DE', { hour:'2-digit', minute:'2-digit' });
+      }
+      renderHeadline();
+      renderTicker();
+    } catch (err){
+      // Bei Fehlern einfach mit den zuletzt bekannten Daten weiterlaufen.
+      statusEl.textContent = 'Daten konnten nicht aktualisiert werden – zeige letzten Stand.';
+      console.error('Fehler beim Laden von news.json', err);
+    }
+  }
+
+  function rotateHeadline(){
+    if (items.length === 0) return;
+    rotateIndex = (rotateIndex + 1) % items.length;
+    renderHeadline();
+  }
+
+  updateClock();
+  setInterval(updateClock, 1000);
+
+  loadNews();
+  setInterval(loadNews, REFRESH_DATA_MS);
+  setInterval(rotateHeadline, ROTATE_MS);
+</script>
+</body>
+</html>
