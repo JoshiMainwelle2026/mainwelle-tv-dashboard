@@ -45,6 +45,10 @@ DATE_PATTERN_JS = (
     r"\d{4}\s+\d{2}:\d{2}/"
 )
 
+# Satzende: . ! ? oder … gefolgt von Leerraum. Damit wird der Teaser nie
+# mitten im Satz abgeschnitten, sondern immer nach einem ganzen Satz beendet.
+SENTENCE_SPLIT_PATTERN = re.compile(r"(?<=[.!?…])\s+")
+
 MONTHS = {
     "Januar": 1, "Februar": 2, "März": 3, "April": 4, "Mai": 5, "Juni": 6,
     "Juli": 7, "August": 8, "September": 9, "Oktober": 10, "November": 11,
@@ -99,22 +103,27 @@ def collect_items(page):
 
 
 def make_teaser(text: str) -> str:
-    """Kürzt einen Artikeltext auf einen kurzen Teaser, ohne ein Wort
-    mittendrin abzuschneiden."""
+    """Baut aus einem Artikeltext einen Teaser aus ganzen Sätzen. Hört nie
+    mitten im Satz auf: Es wird immer mindestens der erste ganze Satz
+    übernommen, danach weitere ganze Sätze, bis TEASER_MAX_LEN erreicht ist."""
     text = re.sub(r"\s+", " ", text).strip()
-    if len(text) <= TEASER_MAX_LEN:
+    if not text:
+        return ""
+    sentences = [s.strip() for s in SENTENCE_SPLIT_PATTERN.split(text) if s.strip()]
+    if not sentences:
         return text
-    cut = text[:TEASER_MAX_LEN]
-    last_space = cut.rfind(" ")
-    if last_space > 0:
-        cut = cut[:last_space]
-    return cut.rstrip(" ,.-–") + " …"
+    teaser = sentences[0]
+    for sentence in sentences[1:]:
+        if len(teaser) >= TEASER_MAX_LEN:
+            break
+        teaser = f"{teaser} {sentence}"
+    return teaser
 
 
 def fetch_teaser(page, url: str) -> str:
-    """Öffnet die Artikelseite und holt den ersten nicht-leeren Absatz des
-    Fließtexts als Teaser. Gibt bei Problemen einfach einen leeren String
-    zurück, statt den ganzen Lauf scheitern zu lassen."""
+    """Öffnet die Artikelseite und baut aus den ersten Absätzen des
+    Fließtexts einen Teaser aus ganzen Sätzen. Gibt bei Problemen einfach
+    einen leeren String zurück, statt den ganzen Lauf scheitern zu lassen."""
     try:
         page.goto(url, wait_until="domcontentloaded", timeout=15000)
         page.wait_for_selector(".idvl-editor p", timeout=8000)
@@ -122,10 +131,17 @@ def fetch_teaser(page, url: str) -> str:
             ".idvl-editor p",
             "els => els.map(e => e.innerText)",
         )
+        combined = ""
         for paragraph in paragraphs:
             paragraph = (paragraph or "").strip()
-            if paragraph:
-                return make_teaser(paragraph)
+            if not paragraph:
+                continue
+            combined = f"{combined} {paragraph}".strip() if combined else paragraph
+            # Genug Text gesammelt, um daraus einen vollen Teaser zu bauen.
+            if len(combined) >= TEASER_MAX_LEN:
+                break
+        if combined:
+            return make_teaser(combined)
     except Exception:
         pass
     return ""
@@ -134,7 +150,12 @@ def fetch_teaser(page, url: str) -> str:
 def load_existing_teasers():
     """Liest die zuletzt veröffentlichte news.json, damit wir für bereits
     bekannte Meldungen nicht bei jedem Lauf erneut die Artikelseite laden
-    müssen (spart Zeit und Last auf mainwelle.de)."""
+    müssen (spart Zeit und Last auf mainwelle.de).
+
+    Alte Teaser, die noch mit "…" mitten im Satz abgeschnitten wurden (vor
+    der Umstellung auf ganze Sätze), werden bewusst NICHT übernommen, damit
+    sie beim nächsten Lauf einmalig neu (und diesmal vollständig) geholt
+    werden."""
     if not OUTPUT_PATH.exists():
         return {}
     try:
@@ -144,7 +165,9 @@ def load_existing_teasers():
     return {
         item["url"]: item["teaser"]
         for item in data.get("items", [])
-        if item.get("url") and item.get("teaser")
+        if item.get("url")
+        and item.get("teaser")
+        and item["teaser"].rstrip()[-1:] in (".", "!", "?")
     }
 
 
@@ -213,7 +236,8 @@ def scrape(debug: bool = False):
         items = raw_items[:MAX_ITEMS]
 
         # Teaser ergänzen: aus dem Cache übernehmen, wenn wir die Meldung
-        # schon kennen, sonst kurz die Artikelseite besuchen.
+        # schon (mit vollständigem Satz) kennen, sonst kurz die Artikelseite
+        # besuchen.
         for item in items:
             cached = existing_teasers.get(item["url"])
             item["teaser"] = cached if cached else fetch_teaser(page, item["url"])
