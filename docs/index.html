@@ -102,8 +102,25 @@
   }
   .headline.visible{ opacity:1; transform:translateY(0); }
 
+  .teaser{
+    margin-top:2.2vh;
+    font-size:2.7vh;
+    line-height:1.45;
+    font-weight:500;
+    color:rgba(255,255,255,0.82);
+    max-width:64vw;
+    display:-webkit-box;
+    -webkit-line-clamp:3;
+    -webkit-box-orient:vertical;
+    overflow:hidden;
+    opacity:0;
+    transform:translateY(1.2vh);
+    transition:opacity 0.5s ease, transform 0.5s ease;
+  }
+  .teaser.visible{ opacity:1; transform:translateY(0); }
+
   .headline-meta{
-    margin-top:2.6vh;
+    margin-top:2vh;
     font-size:2.1vh;
     color:var(--hellblau);
     font-weight:500;
@@ -184,6 +201,7 @@
     <div class="region-tag"><span class="dot"></span> Regional-News &middot; Bayreuth &amp; die Region</div>
     <div class="headline-wrap">
       <div class="headline" id="headline">Nachrichten werden geladen …</div>
+      <div class="teaser" id="teaser"></div>
       <div class="headline-meta" id="headline-meta"></div>
     </div>
     <div class="dots" id="dots"></div>
@@ -208,6 +226,7 @@
   const clockEl = document.getElementById('clock');
   const dateEl = document.getElementById('date');
   const headlineEl = document.getElementById('headline');
+  const teaserEl = document.getElementById('teaser');
   const metaEl = document.getElementById('headline-meta');
   const dotsEl = document.getElementById('dots');
   const tickerEl = document.getElementById('ticker-track');
@@ -243,15 +262,20 @@
     if (items.length === 0){
       headlineEl.textContent = 'Aktuell liegen keine neuen Meldungen vor.';
       headlineEl.classList.add('visible');
+      teaserEl.textContent = '';
+      teaserEl.classList.remove('visible');
       metaEl.textContent = '';
       return;
     }
     const item = items[rotateIndex];
     headlineEl.classList.remove('visible');
+    teaserEl.classList.remove('visible');
     setTimeout(() => {
       headlineEl.textContent = item.title;
+      teaserEl.textContent = item.teaser || '';
       metaEl.textContent = timeAgo(item.published);
       headlineEl.classList.add('visible');
+      teaserEl.classList.add('visible');
     }, 220);
     renderDots();
   }
