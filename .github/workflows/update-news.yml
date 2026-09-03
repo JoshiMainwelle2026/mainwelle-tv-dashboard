@@ -1,0 +1,37 @@
+name: Mainwelle Dashboard aktualisieren
+
+on:
+  schedule:
+    # Alle 15 Minuten. GitHub führt Cron-Jobs "best effort" aus,
+    # bei viel Last kann es ein paar Minuten Verzögerung geben.
+    - cron: "*/15 * * * *"
+  workflow_dispatch: {}  # manueller Start über den "Actions"-Tab möglich
+
+permissions:
+  contents: write
+
+jobs:
+  update-news:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repository auschecken
+        uses: actions/checkout@v4
+
+      - name: Python einrichten
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Abhängigkeiten installieren
+        run: |
+          pip install -r scraper/requirements.txt
+          python -m playwright install --with-deps chromium
+
+      - name: Nachrichten abrufen
+        run: python scraper/scrape_news.py
+
+      - name: Änderungen committen (falls vorhanden)
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Nachrichten aktualisiert"
+          file_pattern: docs/news.json
