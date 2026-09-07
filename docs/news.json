@@ -1,7 +1,13 @@
 {
-  "generated_at": "2026-09-07T09:23:29",
+  "generated_at": "2026-09-07T09:38:01",
   "source": "https://www.mainwelle.de/kategorie/nachrichten/regional-nachrichten/",
   "items": [
+    {
+      "title": "Vorsicht, betrügerische Mails!",
+      "published": "2026-09-07T11:23:00",
+      "url": "https://www.mainwelle.de/vorsicht-betruegerische-mails-2419167/",
+      "teaser": "Vorsicht, betrügerische Mails! Die IHK für Oberfranken warnt Unternehmen vor einer neuen Phishing-Welle rund um das Betriebssystem Microsoft 365. In Oberfranken sollen schon mehrere Firmen betroffen sein. Bei der Angriffsmethode „Kali365“ verschicken Betrüger täuschend echt aussehende Nachrichten, die wie offizielle Microsoft-Anfragen wirken."
+    },
     {
       "title": "Polizeibericht 07.09.2026",
       "published": "2026-09-07T09:32:00",
@@ -85,12 +91,6 @@
       "published": "2026-09-04T16:25:00",
       "url": "https://www.mainwelle.de/ig-bau-oberfranken-fordert-hoeheren-mindestlohn-fuer-gebaeudereiniger-2415099/",
       "teaser": "Sie halten Büros, Kitas und Klassenzimmer in Schuss, für’s eigene Leben reicht der Lohn aber nicht: Die Gewerkschaft IG BAU Oberfranken fordert einen höheren Mindestlohn für Gebäudereiniger angesichts der gestiegenen Inflation."
-    },
-    {
-      "title": "Neue Öffnungszeiten im Freibad Bischofsgrün",
-      "published": "2026-09-04T16:08:00",
-      "url": "https://www.mainwelle.de/neue-oeffnungszeiten-im-freibad-bischofsgruen-2415087/",
-      "teaser": "Im Regionalfreibad Bischofsgrün gelten ab sofort andere Öffnungszeiten. Das Bad hat täglich von 10 bis 17 Uhr geöffnet, ab 16 Uhr gilt bereits der günstigere Abendtarif. Je nach Wetter kann das Freibad an einzelnen Tagen früher schließen oder bei schönem Wetter auch länger offenbleiben."
     }
   ]
 }
